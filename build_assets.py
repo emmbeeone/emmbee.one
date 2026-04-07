@@ -61,8 +61,8 @@ qr_data = [
     ("qr-class8.png", f"https://wa.me/{PHONE}?text=CLASS%208"),
     ("qr-class9.png", f"https://wa.me/{PHONE}?text=CLASS%209"),
     ("qr-class10.png", f"https://wa.me/{PHONE}?text=CLASS%2010"),
-    ("qr-demo.png", f"https://wa.me/{PHONE}?text=I%20want%20to%20schedule%20a%20demo%20class"),
-    ("qr-success-stories.png", "https://www.emmbee.one/success-stories.html"),
+    ("qr-demo.png", f"https://wa.me/{PHONE}?text=I%20want%20to%20schedule%20a%20demo%20session"),
+    ("qr-success-stories.png", "https://www.emmbee.one/success-stories/"),
 ]
 
 for filename, data in qr_data:
