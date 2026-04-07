@@ -1,0 +1,33 @@
+
+Meet the Mentor
+<insert image:emmbee>
+Manoj Kumar
+Founder & Academic Mentor – EmmBee.One
+
+I am an Information Technology professional with nearly two decades of global industry experience across India, Japan, and France. Over the years, I have worked in roles such as Solution Architect, Business Analyst, Cybersecurity Consultant, and Artificial Intelligence researcher and practitioner — helping organizations solve complex problems and build reliable systems.
+
+Through my international work experience, I have observed one common truth:
+success in life depends not only on academic marks, but on clarity of thinking, confidence in communication, and the ability to solve problems independently.
+While working with global teams, I often mentored young professionals and students from various countries, helping them develop structured thinking, logical reasoning, and career awareness. These experiences inspired me to contribute at an earlier stage — when students are forming their academic habits and self-confidence.
+Classes 8th, 9th, and 10th are crucial years where students begin to shape their identity, interests, and future direction. With the right guidance during this phase, students can develop discipline, curiosity, communication skills, and decision-making ability that supports them for life.
+
+At EmmBee.One, I work with small groups of students to provide focused academic support, spoken English improvement, and structured mentoring for clarity and confidence.
+
+My approach is influenced by Design Thinking principles — encouraging students to ask questions, think independently, and develop problem-solving skills rather than relying only on memorization.
+
+Having spent several years abroad, I have returned to India with the intention of sharing practical knowledge, global perspective, and structured learning habits with young students.
+I intentionally keep batch sizes small so that every student receives individual attention and steady guidance.
+
+My objective is simple:
+to help students become confident learners, effective communicators, and thoughtful decision-makers during their most important academic years.
+
+
+
+
+*****************
+
+1. On the home page, replace 'Line-graph' image from 'Student success stories' preview section to a similar image as 'phoenix-reference-image'. I want the image to look like how Do not add the same image. 
+2. In the footer add email: emmbee.one@gmail.com
+3. In the 'Success Stories' page point 3: The Transformation: Measurable Breakthroughs. In the table below change 'Results Observed' to 'Results Observed(By Parents)
+
+The image that you'll update in the previous step; I want that image as a large watermark
