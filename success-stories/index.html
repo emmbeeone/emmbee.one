@@ -117,7 +117,7 @@
 
                 <div class="my-16">
                     <h3 class="text-2xl font-serif font-bold text-center text-persian mb-8">Visualization of Growth</h3>
-                    <img src="../images/Line-graph.webp" alt="Growth Graph" class="rounded-2xl shadow-xl border border-gray-200 mx-auto max-w-2xl">
+                    <img src="../images/Line-graph.webp" alt="Growth Graph" class="rounded-2xl shadow-xl border border-gray-200 mx-auto w-full max-w-2xl h-auto">
                     <p class="text-center text-sm text-gray-500 mt-4 italic">Transition from Diagnostic Dip to Pre-Board Excellence</p>
                     
                     <!-- Section: Parent Feedback Banner -->
@@ -139,38 +139,74 @@
 
                 <h2 class="text-3xl font-serif font-bold text-persian mb-6">3. The Transformation: Measurable Breakthroughs</h2>
                 
-                <div class="overflow-x-auto mb-16">
-                    <table class="w-full text-left border-collapse bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                        <thead>
-                            <tr class="bg-persian text-white">
-                                <th class="p-4 md:p-6 font-bold">Metric</th>
-                                <th class="p-4 md:p-6 font-bold">Before Mentoring</th>
-                                <th class="p-4 md:p-6 font-bold">Results Observed(By Parents)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr>
-                                <td class="p-4 md:p-6 font-bold text-persian">Confidence</td>
-                                <td class="p-4 md:p-6 text-red-500">Low</td>
-                                <td class="p-4 md:p-6 text-green-600 font-bold">"Good" (Major Shift)</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 md:p-6 font-bold text-persian">Exam Mindset</td>
-                                <td class="p-4 md:p-6 text-red-500">Very Scared</td>
-                                <td class="p-4 md:p-6 text-green-600 font-bold">Much more comfortable</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 md:p-6 font-bold text-persian">Study Discipline</td>
-                                <td class="p-4 md:p-6 text-red-500">Inconsistent</td>
-                                <td class="p-4 md:p-6 text-green-600 font-bold">More consistent</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 md:p-6 font-bold text-persian">Daily Effort</td>
-                                <td class="p-4 md:p-6 text-red-500">2 Hours</td>
-                                <td class="p-4 md:p-6 text-green-600 font-bold">9-10 Hours</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- Responsive Transformation: Cards for Mobile, Table for Desktop -->
+                <div class="mb-16">
+                    <!-- Mobile View -->
+                    <div class="md:hidden space-y-4">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-gold">
+                            <h4 class="font-bold text-persian mb-3 text-lg">Confidence</h4>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full">Before: Low</span>
+                                <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full">After: Major Shift</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-gold">
+                            <h4 class="font-bold text-persian mb-3 text-lg">Exam Mindset</h4>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full">Before: Very Scared</span>
+                                <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full">After: Comfortable</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-gold">
+                            <h4 class="font-bold text-persian mb-3 text-lg">Study Discipline</h4>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full">Before: Inconsistent</span>
+                                <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full">After: Consistent</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-gold">
+                            <h4 class="font-bold text-persian mb-3 text-lg">Daily Effort</h4>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full">Before: 2 Hours</span>
+                                <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full">After: 9-10 Hours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desktop View -->
+                    <div class="hidden md:block overflow-x-auto">
+                        <table class="w-full text-left border-collapse bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                            <thead>
+                                <tr class="bg-persian text-white">
+                                    <th class="p-6 font-bold">Metric</th>
+                                    <th class="p-6 font-bold">Before Mentoring</th>
+                                    <th class="p-6 font-bold">Results Observed (By Parents)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr>
+                                    <td class="p-6 font-bold text-persian">Confidence</td>
+                                    <td class="p-6 text-red-500">Low</td>
+                                    <td class="p-6 text-green-600 font-bold">"Good" (Major Shift)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 font-bold text-persian">Exam Mindset</td>
+                                    <td class="p-6 text-red-500">Very Scared</td>
+                                    <td class="p-6 text-green-600 font-bold">Much more comfortable</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 font-bold text-persian">Study Discipline</td>
+                                    <td class="p-6 text-red-500">Inconsistent</td>
+                                    <td class="p-6 text-green-600 font-bold">More consistent</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 font-bold text-persian">Daily Effort</td>
+                                    <td class="p-6 text-red-500">2 Hours</td>
+                                    <td class="p-6 text-green-600 font-bold">9-10 Hours</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8 mb-16">
