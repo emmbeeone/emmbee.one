@@ -10,13 +10,18 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        [id] {
+            scroll-margin-top: 100px;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
 
     <!-- NAVIGATION -->
     <nav class="site-nav scrolled" id="siteNav">
         <div class="nav-inner">
-            <a href="/" class="nav-logo"><img src="../images/LOGO.png" alt="EmmBee.One Logo"></a>
+            <a href="../index.html" class="nav-logo"><img src="../images/LOGO.png" alt="EmmBee.One Logo"></a>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../success-stories/">Success Stories</a></li>
@@ -443,6 +448,24 @@
                 icon.classList.add('rotate-180');
             }
         }
+
+        // Handle direct links to FAQ items
+        window.addEventListener('load', () => {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetId = hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const btn = targetElement.querySelector('button');
+                    if (btn) {
+                        setTimeout(() => {
+                            toggleFaq(btn);
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
