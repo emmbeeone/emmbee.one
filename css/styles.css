@@ -97,6 +97,21 @@ a { text-decoration: none; color: inherit; }
     color: var(--gold);
     background: rgba(212, 175, 55, 0.1);
 }
+.nav-btn-gold {
+    background: var(--gold) !important;
+    color: var(--persian-dark) !important;
+    padding: 0.5rem 1.25rem !important;
+    font-weight: 700 !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    margin-left: 0.5rem;
+    transition: var(--transition);
+}
+.nav-btn-gold:hover {
+    background: #e6c040 !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
 .nav-hamburger {
     display: flex;
     flex-direction: column;
