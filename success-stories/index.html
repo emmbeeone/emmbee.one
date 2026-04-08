@@ -37,22 +37,21 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: clamp(300px, 40vw, 600px);
-            height: clamp(300px, 40vw, 600px);
+            width: clamp(350px, 45vw, 650px);
+            height: clamp(350px, 45vw, 650px);
+            background-image: url('../images/phoenix.webp');
+            background-size: cover;
+            background-position: top left;
+            background-repeat: no-repeat;
             background-color: var(--persian);
-            -webkit-mask-image: url('../images/phoenix.webp');
-            mask-image: url('../images/phoenix.webp');
-            -webkit-mask-size: contain;
-            mask-size: contain;
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-            opacity: 0.15;
+            background-blend-mode: luminosity; /* Sophisticated tinting */
+            opacity: 0.25; /* More visible watermark */
             z-index: 0;
             pointer-events: none;
-            filter: blur(1px);
-            /* Soften the edges for a watermark feel */
-            transform: translate(-5%, -5%);
-            /* Subtle offset */
+            filter: contrast(1.1) brightness(0.9);
+            transform: translate(-10%, -10%);
+            mask-image: linear-gradient(to right, black, transparent); /* Fade it out to the right */
+            -webkit-mask-image: linear-gradient(to right, black 40%, transparent 90%);
         }
 
         @media (max-width: 768px) {
