@@ -29,36 +29,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <style>
-        .phoenix-watermark {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: clamp(400px, 50vw, 750px);
-            height: clamp(400px, 50vw, 750px);
-            background-image: url('../images/phoenix.webp');
-            background-size: cover;
-            background-position: top left;
-            background-repeat: no-repeat;
-            /* Using soft-light blending makes the texture visible while keeping the hero's navy color */
-            mix-blend-mode: soft-light;
-            opacity: 0.6; /* Higher opacity works well with soft-light blending */
-            z-index: 0;
-            pointer-events: none;
-            filter: contrast(1.2) brightness(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .phoenix-watermark {
-                opacity: 0.35;
-                width: 250px;
-                height: 250px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-gray-50">
@@ -92,7 +63,6 @@
 
     <!-- HERO -->
     <header class="page-hero">
-        <div class="phoenix-watermark"></div>
         <div class="container-sm">
             <span class="text-gold font-bold tracking-widest uppercase text-sm mb-4 block">Measurable Results</span>
             <h1>Rising from the Ashes</h1>
