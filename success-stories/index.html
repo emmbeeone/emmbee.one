@@ -33,16 +33,16 @@
     <style>
         .phoenix-watermark {
             position: absolute;
-            top: -10%;
-            left: -10%;
-            width: clamp(500px, 60vw, 900px);
-            height: clamp(500px, 60vw, 900px);
+            top: -150px; /* Lifted higher into the top margin */
+            left: -100px;
+            width: 600px; /* Reduced for better desktop proportions */
+            height: 600px;
             background-image: url('../images/phoenix.webp');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             mix-blend-mode: soft-light;
-            opacity: 0.9; /* Stronger opacity as soft-light is very subtle */
+            opacity: 0.85; /* Sligthly more subtle for professional feel */
             z-index: 0;
             pointer-events: none;
             /* Radial mask ensures NO hard edges are visible */
