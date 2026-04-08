@@ -26,6 +26,34 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .phoenix-watermark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: clamp(300px, 40vw, 600px);
+            height: clamp(300px, 40vw, 600px);
+            background-color: var(--persian);
+            -webkit-mask-image: url('../images/phoenix.webp');
+            mask-image: url('../images/phoenix.webp');
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(1px); /* Soften the edges for a watermark feel */
+            transform: translate(-5%, -5%); /* Subtle offset */
+        }
+        @media (max-width: 768px) {
+            .phoenix-watermark {
+                opacity: 0.1;
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
 
@@ -58,6 +86,7 @@
 
     <!-- HERO -->
     <header class="page-hero">
+        <div class="phoenix-watermark"></div>
         <div class="container-sm">
             <span class="text-gold font-bold tracking-widest uppercase text-sm mb-4 block">Measurable Results</span>
             <h1>Rising from the Ashes</h1>
