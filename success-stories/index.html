@@ -30,6 +30,37 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .phoenix-watermark {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: clamp(500px, 60vw, 900px);
+            height: clamp(500px, 60vw, 900px);
+            background-image: url('../images/phoenix.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            mix-blend-mode: soft-light;
+            opacity: 0.9; /* Stronger opacity as soft-light is very subtle */
+            z-index: 0;
+            pointer-events: none;
+            /* Radial mask ensures NO hard edges are visible */
+            -webkit-mask-image: radial-gradient(circle at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 75%);
+            mask-image: radial-gradient(circle at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 75%);
+            filter: contrast(1.1) brightness(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .phoenix-watermark {
+                width: 400px;
+                height: 400px;
+                top: -50px;
+                left: -50px;
+                opacity: 0.7;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50">
@@ -63,6 +94,7 @@
 
     <!-- HERO -->
     <header class="page-hero">
+        <div class="phoenix-watermark"></div>
         <div class="container-sm">
             <span class="text-gold font-bold tracking-widest uppercase text-sm mb-4 block">Measurable Results</span>
             <h1>Rising from the Ashes</h1>
