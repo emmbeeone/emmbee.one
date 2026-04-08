@@ -224,7 +224,11 @@ a { text-decoration: none; color: inherit; }
     transition: var(--transition);
     pointer-events: none;
 }
-.whatsapp-fab:hover .fab-tooltip { opacity: 1; visibility: visible; }
+.whatsapp-fab:hover .fab-tooltip,
+.whatsapp-fab.active .fab-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* --- Shared Section Styles --- */
 .section-padding { padding: 6rem 1rem; }

@@ -161,30 +161,42 @@
                     <div class="md:hidden space-y-4">
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-gold">
                             <h4 class="font-bold text-persian mb-3 text-lg">Confidence</h4>
-                            <div class="flex justify-between items-center text-sm">
-                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full">Before: Low</span>
-                                <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full">After: Major Shift</span>
+                            <div class="flex flex-col gap-2">
+                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full text-sm text-center">Before: Low</span>
+                                <div class="flex flex-col">
+                                    <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full text-sm text-center">After: Major Shift</span>
+                                    <span class="text-[10px] text-green-700 opacity-70 mt-1 font-bold font-sans uppercase tracking-tighter text-center italic">Reported by Parents</span>
+                                </div>
                             </div>
                         </div>
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-gold">
                             <h4 class="font-bold text-persian mb-3 text-lg">Exam Mindset</h4>
-                            <div class="flex justify-between items-center text-sm">
-                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full">Before: Very Scared</span>
-                                <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full">After: Comfortable</span>
+                            <div class="flex flex-col gap-2">
+                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full text-sm text-center">Before: Very Scared</span>
+                                <div class="flex flex-col">
+                                    <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full text-sm text-center">After: Much more comfortable</span>
+                                    <span class="text-[10px] text-green-700 opacity-70 mt-1 font-bold font-sans uppercase tracking-tighter text-center italic">Reported by Parents</span>
+                                </div>
                             </div>
                         </div>
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-gold">
                             <h4 class="font-bold text-persian mb-3 text-lg">Study Discipline</h4>
-                            <div class="flex justify-between items-center text-sm">
-                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full">Before: Inconsistent</span>
-                                <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full">After: Consistent</span>
+                            <div class="flex flex-col gap-2">
+                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full text-sm text-center">Before: Inconsistent</span>
+                                <div class="flex flex-col">
+                                    <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full text-sm text-center">After: More consistent</span>
+                                    <span class="text-[10px] text-green-700 opacity-70 mt-1 font-bold font-sans uppercase tracking-tighter text-center italic">Reported by Parents</span>
+                                </div>
                             </div>
                         </div>
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 border-l-4 border-gold">
                             <h4 class="font-bold text-persian mb-3 text-lg">Daily Effort</h4>
-                            <div class="flex justify-between items-center text-sm">
-                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full">Before: 2 Hours</span>
-                                <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full">After: 9-10 Hours</span>
+                            <div class="flex flex-col gap-2">
+                                <span class="bg-red-50 text-red-500 px-3 py-1 rounded-full text-sm text-center">Before: 2 Hours</span>
+                                <div class="flex flex-col">
+                                    <span class="bg-green-50 text-green-600 font-bold px-3 py-1 rounded-full text-sm text-center">After: 9-10 Hours</span>
+                                    <span class="text-[10px] text-green-700 opacity-70 mt-1 font-bold font-sans uppercase tracking-tighter text-center italic">Reported by Parents</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -341,6 +353,20 @@
     </a>
 
     <script>
+        // WhatsApp FAB Mobile Handling
+        const fab = document.querySelector('.whatsapp-fab');
+        if (fab) {
+            fab.addEventListener('click', function(e) {
+                if (window.innerWidth < 768 && !this.classList.contains('active')) {
+                    e.preventDefault();
+                    this.classList.add('active');
+                }
+            });
+            document.addEventListener('click', (e) => {
+                if (fab && !fab.contains(e.target)) fab.classList.remove('active');
+            });
+        }
+
         // Mobile Nav Toggle
         function toggleMobileNav() {
             const hamburger = document.getElementById('navHamburger');

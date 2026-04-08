@@ -804,6 +804,20 @@
     </a>
 
     <script>
+        // WhatsApp FAB Mobile Handling
+        const fab = document.querySelector('.whatsapp-fab');
+        if (fab) {
+            fab.addEventListener('click', function(e) {
+                if (window.innerWidth < 768 && !this.classList.contains('active')) {
+                    e.preventDefault();
+                    this.classList.add('active');
+                }
+            });
+            document.addEventListener('click', (e) => {
+                if (fab && !fab.contains(e.target)) fab.classList.remove('active');
+            });
+        }
+
         // Mobile Nav Toggle
         function toggleMobileNav() {
             const hamburger = document.getElementById('navHamburger');
