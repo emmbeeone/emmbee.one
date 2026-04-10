@@ -250,31 +250,50 @@
         </div>
     </section>
 
-    <!-- MENTOR QUICK INTRO BANNER -->
-    <section class="bg-white py-12 px-4 relative">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-persiandark rounded-[2.5rem] p-6 md:p-8 shadow-2xl border border-gold/20 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group">
-                <!-- Decorative Glow -->
-                <div class="absolute -top-24 -right-24 w-48 h-48 bg-gold/10 rounded-full blur-3xl group-hover:bg-gold/20 transition-all duration-700"></div>
+    <!-- MENTOR SUB-HERO BANNER -->
+    <section class="bg-white py-16 px-4 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="relative bg-persiandark rounded-[3rem] p-8 md:p-16 shadow-[0_20px_50px_rgba(10,25,47,0.3)] overflow-hidden group">
+                <!-- Background Glorification: Gradients & Blurs -->
+                <div class="absolute inset-0 bg-gradient-to-br from-persian/20 via-transparent to-gold/5 pointer-events-none"></div>
+                <div class="absolute -top-40 -left-40 w-96 h-96 bg-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
+                <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-persian/20 rounded-full blur-[100px] pointer-events-none"></div>
                 
-                <!-- Mentor Image -->
-                <div class="w-32 h-32 md:w-40 md:h-40 shrink-0 relative">
-                    <div class="absolute inset-0 bg-gold rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
-                    <img src="images/Mentor-photo.webp" alt="Manoj Kumar - Academic Mentor" class="w-full h-full object-cover rounded-2xl relative z-10 border-2 border-persiandark shadow-lg">
-                </div>
+                <div class="flex flex-col lg:flex-row items-center gap-12 relative z-10">
+                    <!-- Mentor Image: Glorified Container -->
+                    <div class="w-48 h-48 md:w-64 md:h-64 shrink-0 relative">
+                        <!-- Outer Decorative Ring -->
+                        <div class="absolute inset-0 border-2 border-gold/30 rounded-full scale-110 animate-[spin_10s_linear_infinite] opacity-50"></div>
+                        <!-- Hexagonal/Modern Frame -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-gold to-yellow-600 rounded-[2rem] rotate-6 group-hover:rotate-12 transition-transform duration-700 shadow-xl"></div>
+                        <img src="images/Mentor-photo.webp" alt="Manoj Kumar - Academic Mentor" class="w-full h-full object-cover object-top rounded-[2rem] relative z-10 border-4 border-persiandark shadow-2xl">
+                    </div>
 
-                <!-- Bio Content -->
-                <div class="flex-1 text-center md:text-left">
-                    <h3 class="text-gold font-bold tracking-[0.2em] uppercase text-xs mb-3">Meet Your Mentor</h3>
-                    <p class="text-white text-lg md:text-xl font-serif italic mb-4 leading-relaxed">
-                        "Design Thinker and global IT professional with 20 years of international experience. Driven to build clarity, logic, and independent thinking through academic mentoring."
-                    </p>
-                    <a href="mentor/" class="inline-flex items-center text-gold font-bold text-sm tracking-widest uppercase group/link">
-                        <span class="border-b border-gold/30 group-hover/link:border-gold transition-colors pb-1">Know the Mentor More</span>
-                        <svg class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </a>
+                    <!-- Content Block -->
+                    <div class="flex-1 text-center lg:text-left">
+                        <div class="inline-block bg-gold/10 border border-gold/30 text-gold px-4 py-1.5 rounded-full text-[10px] font-bold tracking-[0.3em] uppercase mb-6">
+                            Executive Mentor Profile
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
+                            Meet Manoj Kumar
+                        </h2>
+                        <p class="text-gray-200 text-lg md:text-2xl font-serif italic mb-8 leading-relaxed max-w-2xl opacity-90">
+                            "Design Thinker and global IT professional with 20 years of international experience. Driven to build clarity, logic, and independent thinking through academic mentoring."
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center gap-6">
+                            <a href="mentor/" class="bg-gold hover:bg-yellow-500 text-persiandark font-bold px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-xl flex items-center group/btn">
+                                Know the Mentor More
+                                <svg class="w-5 h-5 ml-2 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                            <div class="flex items-center gap-2 text-gray-400 font-medium text-sm">
+                                <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                                Now Mentoring in Dehradun
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
