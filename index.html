@@ -4,7 +4,7 @@
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-254Z7LNMZG"></script>
-    <script>
+    <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -81,13 +81,15 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <!-- Calendly link widget CSS -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Calendly link widget JS -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -285,7 +287,7 @@
                         <div class="absolute inset-0 border-2 border-gold/30 rounded-full scale-110 animate-[spin_10s_linear_infinite] opacity-50"></div>
                         <!-- Hexagonal/Modern Frame -->
                         <div class="absolute inset-0 bg-gradient-to-tr from-gold to-yellow-600 rounded-[2rem] rotate-6 group-hover:rotate-12 transition-transform duration-700 shadow-xl"></div>
-                        <img src="images/Mentor-photo.webp" alt="Manoj Kumar - Academic Mentor" class="w-full h-full object-cover object-top rounded-[2rem] relative z-10 border-4 border-persiandark shadow-2xl">
+                        <img src="images/Mentor-photo.webp" alt="Manoj Kumar - Academic Mentor" class="w-full h-full object-cover object-top rounded-[2rem] relative z-10 border-4 border-persiandark shadow-2xl" loading="lazy">
                     </div>
 
                     <!-- Content Block -->
@@ -415,7 +417,7 @@
                         
                         <!-- Image Container -->
                         <div class="my-8">
-                            <img src="images/SIATP.webp" alt="SIATP - Ministry of Education Innovation Cell" class="w-full h-auto rounded-2xl shadow-lg border border-gray-100">
+                            <img src="images/SIATP.webp" alt="SIATP - Ministry of Education Innovation Cell" class="w-full h-auto rounded-2xl shadow-lg border border-gray-100" loading="lazy">
                             <p class="mt-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Image Source: Innovation Cell, Ministry of Education (MoE)</p>
                         </div>
 
