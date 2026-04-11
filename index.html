@@ -12,7 +12,7 @@
       gtag('config', 'G-254Z7LNMZG');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description"
         content="EmmBee.One — Boutique academic mentoring studio in Dehradun for CBSE Classes 8, 9 & 10. Small batches, logic-building, and personal monitoring. The Anti-Tuition Factory.">
     <link rel="canonical" href="https://www.emmbee.one/">
@@ -162,6 +162,12 @@
             width: 50px;
             height: 3px;
             background: #D4AF37;
+        }
+
+        /* Prevent background shift when Calendly popup is active */
+        body.calendly-enabled {
+            overflow: hidden !important;
+            padding-right: 0 !important;
         }
     </style>
 </head>
