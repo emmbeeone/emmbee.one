@@ -13,7 +13,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <link rel="preload" href="images/Website-Head-Banner-image.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="images/Website-Head-Banner-image.webp" as="image" fetchpriority="high" media="(min-width: 768px)">
+    <link rel="preload" href="images/mobile-header-lean.webp" as="image" fetchpriority="high" media="(max-width: 767px)">
     <meta name="description"
         content="EmmBee.One — Boutique academic mentoring studio in Dehradun for CBSE Classes 8, 9 & 10. Small batches, logic-building, and personal monitoring. The Anti-Tuition Factory.">
     <link rel="canonical" href="https://www.emmbee.one/">
@@ -125,9 +126,15 @@
         }
 
         .hero-section {
-            background-image: linear-gradient(to bottom, rgba(10, 25, 47, 0.75), rgba(28, 63, 96, 0.85)), url('images/Website-Head-Banner-image.webp');
+            background-image: linear-gradient(to bottom, rgba(10, 25, 47, 0.75), rgba(28, 63, 96, 0.85)), url('images/mobile-header-lean.webp');
             background-size: cover;
             background-position: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-section {
+                background-image: linear-gradient(to bottom, rgba(10, 25, 47, 0.75), rgba(28, 63, 96, 0.85)), url('images/Website-Head-Banner-image.webp');
+            }
         }
 
         @media (hover: hover) and (pointer: fine) {
