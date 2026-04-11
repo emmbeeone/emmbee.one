@@ -273,6 +273,8 @@ The UK NARIC report to CBSE specifically says:
 
 **Design Thinking.**
 
+No wonder CBSE is investing crores in training teachers to use Design Thinking.
+
 ---
 
 ## Part 5: My Experience (And Why It Matters for Your Child)
