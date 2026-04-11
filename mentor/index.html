@@ -104,7 +104,7 @@
                             <div class="space-y-3">
                                 <div>
                                     <h5 class="text-[9px] uppercase tracking-[0.2em] text-gold font-bold mb-1">Education & Expertise</h5>
-                                    <p class="text-[10px] leading-tight font-medium">B. Tech. IT (AI Specialization), 2005. PG Diploma (Embedded Systems) from <a href="https://www.ecil.co.in/" target="_blank" class="text-gold underline underline-offset-2">ECIL</a> Pune.</p>
+                                    <p class="text-[10px] leading-tight font-medium">B. Tech. IT (AI Specialization), SITM, Rewari. PG Diploma (Embedded Systems) from <a href="https://www.ecil.co.in/" target="_blank" class="text-gold underline underline-offset-2">ECIL</a> Pune.</p>
                                 </div>
                                 <div class="pt-2 border-t border-white/10">
                                     <h5 class="text-[9px] uppercase tracking-[0.2em] text-gold font-bold mb-1.5">Industry Exposure</h5>
@@ -126,7 +126,7 @@
                     <!-- Mobile version of the above panel (below photo) -->
                     <div class="md:hidden mt-6 bg-white shadow-lg p-6 rounded-3xl border border-gray-100">
                         <h5 class="text-xs uppercase tracking-[0.1em] text-gold font-bold mb-2">Academic & Global Record</h5>
-                        <p class="text-sm text-gray-700 leading-relaxed mb-4">B. Tech. (IT, AI Specialization), 2005. PG Diploma (Embedded Systems) from ECIL Pune.</p>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-4">B. Tech. (IT, AI Specialization), SITM, Rewari. PG Diploma (Embedded Systems) from ECIL Pune.</p>
                         <div class="flex flex-wrap gap-x-3 gap-y-2 text-xs text-persian font-medium">
                             <a href="https://www.concentrix.com/" target="_blank" class="underline">Concentrix</a>
                             <a href="https://www.ltimindtree.com/" target="_blank" class="underline">LTI MindTree</a>
@@ -176,8 +176,40 @@
                         Having returned to India, I intend to share this practical knowledge and global perspective. I intentionally keep batch sizes small (max 10) so that every student receives the <span class="text-gold font-bold">individual attention</span> and steady guidance they deserve.
                     </p>
 
-                    <div class="flex flex-wrap gap-4 mt-8">
-                        <a href="../faqs/" class="btn btn-gold !py-4 !text-base">View FAQs</a>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-bold text-persian mb-6">Connect with the Mentor</h4>
+                        <div class="flex flex-col md:flex-row items-center gap-6">
+                            <!-- WhatsApp Dropdown CTA -->
+                            <div class="relative inline-block z-50 text-center w-full md:w-auto" id="whatsapp-container">
+                                <button onclick="toggleWhatsApp()" class="inline-flex items-center justify-center bg-whatsapp hover:bg-whatsapphover text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all w-full md:w-auto focus:outline-none">
+                                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.888-4.435 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                                    </svg>
+                                    WhatsApp or Call
+                                    <svg id="wa-arrow" class="w-5 h-5 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div id="wa-menu" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 w-72 sm:w-80 bg-white rounded-2xl shadow-[0_10px_50px_rgba(0,0,0,0.2)] border border-gray-200 opacity-0 invisible transition-all duration-300 text-left overflow-hidden origin-bottom scale-95">
+                                    <a href="https://wa.me/917505705644?text=I%20want%20to%20connect%20with%20the%20mentor" target="_blank" class="block px-6 py-4 text-persian hover:bg-gold/10 font-bold border-b border-gray-100 transition duration-200">
+                                        ✨ I want to connect with the mentor
+                                    </a>
+                                    <a href="https://wa.me/917505705644?text=CLASS%208" target="_blank" class="block px-6 py-4 text-whatsapp hover:bg-green-50 font-bold border-b border-gray-100 transition duration-200 text-sm">
+                                        ✨ CLASS 8 Inquiry
+                                    </a>
+                                    <a href="https://wa.me/917505705644?text=CLASS%209" target="_blank" class="block px-6 py-4 text-whatsapp hover:bg-green-50 font-bold border-b border-gray-100 transition duration-200 text-sm">
+                                        ✨ CLASS 9 Inquiry
+                                    </a>
+                                    <a href="https://wa.me/917505705644?text=CLASS%2010" target="_blank" class="block px-6 py-4 text-whatsapp hover:bg-green-50 font-bold border-b border-gray-100 transition duration-200 text-sm">
+                                        ✨ CLASS 10 Inquiry
+                                    </a>
+                                    <a href="https://wa.me/917505705644?text=I%20want%20to%20schedule%20a%20demo%20session" target="_blank" class="block px-6 py-5 bg-green-50/50 text-whatsapp hover:bg-green-100 font-bold transition duration-200 text-sm">
+                                        🗓️ Schedule a demo session
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="../faqs/" class="text-persian font-bold hover:text-gold transition underline decoration-gold/30">View FAQs First →</a>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -290,6 +322,34 @@
             overlay.classList.toggle('open');
             document.body.classList.toggle('overflow-hidden');
         }
+
+        // WhatsApp Dropdown Logic
+        function toggleWhatsApp() {
+            const menu = document.getElementById('wa-menu');
+            const arrow = document.getElementById('wa-arrow');
+            if (menu.classList.contains('opacity-0')) {
+                menu.classList.remove('opacity-0', 'invisible', 'scale-95');
+                menu.classList.add('opacity-100', 'visible', 'scale-100');
+                arrow.classList.add('rotate-180');
+            } else {
+                menu.classList.add('opacity-0', 'invisible', 'scale-95');
+                menu.classList.remove('opacity-100', 'visible', 'scale-100');
+                arrow.classList.remove('rotate-180');
+            }
+        }
+
+        document.addEventListener('click', function (event) {
+            const container = document.getElementById('whatsapp-container');
+            if (container && !container.contains(event.target)) {
+                const menu = document.getElementById('wa-menu');
+                const arrow = document.getElementById('wa-arrow');
+                if (menu && !menu.classList.contains('opacity-0')) {
+                    menu.classList.add('opacity-0', 'invisible', 'scale-95');
+                    menu.classList.remove('opacity-100', 'visible', 'scale-100');
+                    arrow.classList.remove('rotate-180');
+                }
+            }
+        });
     </script>
 </body>
 </html>
