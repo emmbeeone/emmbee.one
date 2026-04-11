@@ -194,6 +194,14 @@
                 <li><a href="studio/" class="hover:text-gold transition">Learning Studio</a></li>
                 <li><a href="mentor/" class="hover:text-gold transition">Meet the Mentor</a></li>
                 <li><a href="faqs/" class="hover:text-gold transition">FAQs</a></li>
+                <li class="flex items-center">
+                    <a href="#contact" class="flex items-center gap-1.5 hover:text-gold transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>Email Us</span>
+                    </a>
+                </li>
                 <li><a href="#contact" class="nav-btn-gold">Mentorship Fee</a></li>
             </ul>
             <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileNav()" aria-label="Menu">
@@ -208,6 +216,12 @@
         <a href="studio/" class="flex items-center">Learning Studio</a>
         <a href="mentor/" class="flex items-center">Meet the Mentor</a>
         <a href="faqs/" class="flex items-center">FAQs</a>
+        <a href="#contact" class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z" />
+            </svg>
+            Email Us
+        </a>
         <a href="#contact" class="font-bold text-gold">Mentorship Fee</a>
     </div>
 
@@ -938,7 +952,7 @@
                         <svg class="w-6 h-6 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z"></path>
                         </svg>
-                        Book on Calendar
+                        Book Free Demo Session on Calendar
                     </button>
 
                     <!-- WhatsApp Dropdown CTA -->
@@ -1064,22 +1078,22 @@
 
                             <div class="grid md:grid-cols-2 gap-5">
                                 <div class="space-y-1">
-                                    <label class="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Parent's Name</label>
+                                    <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Parent's Name *</label>
                                     <input type="text" name="name" required class="w-full bg-gray-50 border border-gray-100 px-4 py-3 rounded-xl focus:bg-white focus:border-gold outline-none transition-all text-gray-700 font-medium" placeholder="Name">
                                 </div>
                                 <div class="space-y-1">
-                                    <label class="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Phone Number</label>
-                                    <input type="tel" name="phone" required class="w-full bg-gray-50 border border-gray-100 px-4 py-3 rounded-xl focus:bg-white focus:border-gold outline-none transition-all text-gray-700 font-medium" placeholder="Phone">
+                                    <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Phone Number *</label>
+                                    <input type="tel" name="phone" required pattern="[0-9]{10}" maxlength="10" title="Please enter a 10-digit phone number" class="w-full bg-gray-50 border border-gray-100 px-4 py-3 rounded-xl focus:bg-white focus:border-gold outline-none transition-all text-gray-700 font-medium" placeholder="Phone">
                                 </div>
                             </div>
                             
                             <div class="space-y-1">
-                                <label class="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Email Address</label>
+                                <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Email Address *</label>
                                 <input type="email" name="email" required class="w-full bg-gray-50 border border-gray-100 px-4 py-3 rounded-xl focus:bg-white focus:border-gold outline-none transition-all text-gray-700 font-medium" placeholder="Email">
                             </div>
 
                             <div class="space-y-1">
-                                <label class="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Your Message</label>
+                                <label class="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Your Message *</label>
                                 <textarea name="message" required rows="4" class="w-full bg-gray-50 border border-gray-100 px-4 py-3 rounded-xl focus:bg-white focus:border-gold outline-none transition-all text-gray-700 font-medium resize-none" placeholder="How can we help?"></textarea>
                             </div>
 
