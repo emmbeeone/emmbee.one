@@ -187,9 +187,7 @@
             }
             
             .print-qr-section {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
+                display: block !important;
                 margin-top: 40px;
                 padding-top: 30px;
                 border-top: 1px solid #eee;
@@ -407,15 +405,10 @@
 
                 <!-- QR Section for Print (Visible only in PDF/Print) -->
                 <div class="print-qr-section print-only">
-                    <div>
+                    <div class="max-w-xs mx-auto">
                         <img src="../images/qr-demo-v2.png" alt="WhatsApp QR" class="h-32 mx-auto mb-2">
                         <p class="text-[10px] font-bold uppercase tracking-widest text-persian">Scan to Discuss Results</p>
                         <p class="text-[8px] text-gray-500">(Direct WhatsApp to Manoj Sir)</p>
-                    </div>
-                    <div>
-                        <img src="../images/qr-demo-v3.png" alt="Booking QR" class="h-32 mx-auto mb-2">
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-persian">Scan to Book Strategy Fix</p>
-                        <p class="text-[8px] text-gray-500">(1-on-1 Walkthrough Session)</p>
                     </div>
                 </div>
 
