@@ -193,6 +193,7 @@
                 <li><a href="success-stories/" class="hover:text-gold transition">Success Stories</a></li>
                 <li><a href="studio/" class="hover:text-gold transition">Learning Studio</a></li>
                 <li><a href="mentor/" class="hover:text-gold transition">Meet the Mentor</a></li>
+                <li><a href="gap-checker/" class="hover:text-gold transition">Gap Checker</a></li>
                 <li><a href="faqs/" class="hover:text-gold transition">FAQs</a></li>
                 <li class="flex items-center">
                     <a href="#contact-form-section" class="flex items-center gap-1.5 hover:text-gold transition">
@@ -215,6 +216,7 @@
         <a href="success-stories/" class="flex items-center">Success Stories</a>
         <a href="studio/" class="flex items-center">Learning Studio</a>
         <a href="mentor/" class="flex items-center">Meet the Mentor</a>
+        <a href="gap-checker/" class="flex items-center">Gap Checker</a>
         <a href="faqs/" class="flex items-center">FAQs</a>
         <a href="#contact-form-section" class="flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -285,11 +287,18 @@
                 </svg>
             </div>
 
-            <!-- CTA Button -->
-            <a href="#contact"
-                class="bg-gold hover:bg-yellow-500 text-persiandark font-extrabold text-lg md:text-xl px-10 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(212,175,55,0.4)] relative z-20">
-                Take the First Step
-            </a>
+            <!-- Main CTA -->
+            <div class="flex flex-col items-center gap-6">
+                <a href="#contact"
+                    class="bg-gold hover:bg-yellow-500 text-persiandark font-extrabold text-lg md:text-xl px-10 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(212,175,55,0.4)] relative z-20">
+                    Take the First Step
+                </a>
+                
+                <!-- Subtle Secondary CTA -->
+                <a href="gap-checker/" class="text-white/60 hover:text-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase underline underline-offset-8 transition-all duration-300 hover:opacity-100 relative z-20">
+                    Check Foundation Gaps (Free Diagnostic)
+                </a>
+            </div>
         </div>
     </section>
 
@@ -475,6 +484,50 @@
                                 referrerpolicy="strict-origin-when-cross-origin" 
                                 allowfullscreen>
                             </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GAP CHECKER MAGNET PANEL -->
+            <div class="relative mb-20">
+                <div class="absolute inset-0 bg-gold/5 rounded-[3rem] -rotate-1 scale-105 blur-sm"></div>
+                <div class="relative bg-gradient-to-br from-persiandark to-persian p-px rounded-[2.5rem] shadow-2xl overflow-hidden group">
+                    <div class="bg-persiandark rounded-[2.5rem] p-8 md:p-12 relative">
+                        <!-- Decorative background element -->
+                        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-gold/10 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000"></div>
+                        
+                        <div class="flex flex-col md:flex-row items-center gap-10 relative z-10">
+                            <div class="flex-1 text-center md:text-left">
+                                <span class="bg-gold text-persiandark px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">Free Diagnostic Tool</span>
+                                <h3 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Is your child falling into the <span class="text-gold italic">rote-learning trap?</span></h3>
+                                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                                    Our proprietary **CBSE Foundation Gap Checker** pinpoints exact concepts in Maths, Science, and SST where students typically struggle under board pressure.
+                                </p>
+                                <div class="flex flex-wrap justify-center md:justify-start gap-4 text-xs font-bold text-white/70 uppercase tracking-widest mb-8">
+                                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> 15 MIN TEST</span>
+                                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> INSTANT PDF REPORT</span>
+                                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> NCERT ALIGNED</span>
+                                </div>
+                                <a href="gap-checker/" class="inline-block bg-gold hover:bg-yellow-500 text-persiandark font-bold px-10 py-5 rounded-2xl transition-all shadow-xl hover:-translate-y-1">
+                                    Run Gap Checker Now →
+                                </a>
+                            </div>
+                            <div class="hidden lg:block w-72 h-72 bg-white/5 rounded-[2rem] border border-white/10 relative p-8">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <svg class="w-40 h-40 text-gold/20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                </div>
+                                <div class="relative z-10 space-y-4">
+                                    <div class="h-2 bg-gold/30 rounded w-3/4"></div>
+                                    <div class="h-2 bg-white/10 rounded w-full"></div>
+                                    <div class="h-2 bg-white/10 rounded w-5/6"></div>
+                                    <div class="h-2 bg-white/10 rounded w-full mt-6"></div>
+                                    <div class="h-12 bg-gold/10 rounded-xl border border-gold/20 flex items-center px-4">
+                                        <div class="w-8 h-8 rounded-full bg-gold/20"></div>
+                                        <div class="ml-3 h-2 bg-gold/40 rounded w-1/2"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

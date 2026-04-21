@@ -1,0 +1,730 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free CBSE Learning Gap Diagnostic Test for Class 8, 9 & 10 - Official NCERT & CBSE 2025-26 pattern">
+    <title>Free CBSE Learning Gap Diagnostic Test | EmmBee.One</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .header-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .question-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(16 185 129);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-800">
+    <div class="max-w-4xl mx-auto min-h-screen bg-white shadow-2xl overflow-hidden">
+
+        <!-- HEADER -->
+        <div class="bg-emerald-700 text-white px-8 py-6 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div
+                    class="w-10 h-10 bg-white rounded-2xl flex items-center justify-center text-emerald-700 font-bold text-3xl">
+                    E</div>
+                <div>
+                    <h1 class="header-font text-3xl tracking-tighter">EmmBee.One</h1>
+                    <p class="text-emerald-100 text-sm -mt-1">Dehradun • Structured Academic Mentoring</p>
+                </div>
+            </div>
+            <div class="text-right">
+                <h2 class="text-2xl font-semibold">CBSE Learning Gap Diagnostic Test</h2>
+                <p class="text-emerald-100 text-sm">Class 8 • 9 • 10 • All Subjects • 15–20 minutes</p>
+            </div>
+            <div
+                class="hidden md:flex items-center gap-x-2 text-xs uppercase tracking-widest bg-emerald-800 px-4 h-9 rounded-3xl">
+                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                OFFICIAL NCERT + CBSE PATTERN
+            </div>
+        </div>
+
+        <div class="p-8 md:p-10">
+
+            <!-- PROGRESS BAR -->
+            <div class="flex mb-10 border-b border-slate-200">
+                <div onclick="goToStep(1)" id="step1-indicator"
+                    class="step-indicator flex-1 text-center py-3 font-medium text-emerald-700 border-b-4 border-emerald-700 cursor-pointer">
+                    1. Student Details</div>
+                <div onclick="goToStep(2)" id="step2-indicator"
+                    class="step-indicator flex-1 text-center py-3 font-medium text-slate-400 border-b-4 border-transparent cursor-pointer">
+                    2. Take the Test</div>
+                <div onclick="goToStep(3)" id="step3-indicator"
+                    class="step-indicator flex-1 text-center py-3 font-medium text-slate-400 border-b-4 border-transparent cursor-pointer">
+                    3. Your Report</div>
+            </div>
+
+            <!-- STEP 1: DETAILS -->
+            <div id="step1" class="step active">
+                <h3 class="text-3xl font-semibold mb-2">Let’s start with the basics</h3>
+                <p class="text-slate-600 mb-8">This helps us generate a personalised report for your child.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-700">Student’s Full Name</label>
+                        <input id="student-name" type="text" required
+                            class="w-full px-6 py-5 border border-slate-300 rounded-3xl focus:border-emerald-600 focus:ring-0 outline-none text-lg"
+                            placeholder="e.g. Aarav Sharma">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-700">Class</label>
+                        <select id="student-class"
+                            class="w-full px-6 py-5 border border-slate-300 rounded-3xl focus:border-emerald-600 focus:ring-0 outline-none text-lg">
+                            <option value="8">Class 8</option>
+                            <option value="9">Class 9</option>
+                            <option value="10" selected>Class 10</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-700">Parent / Guardian Email</label>
+                        <input id="student-email" type="email" required
+                            class="w-full px-6 py-5 border border-slate-300 rounded-3xl focus:border-emerald-600 focus:ring-0 outline-none text-lg"
+                            placeholder="youremail@gmail.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-slate-700">WhatsApp Number (with country
+                            code)</label>
+                        <input id="student-whatsapp" type="tel" required
+                            class="w-full px-6 py-5 border border-slate-300 rounded-3xl focus:border-emerald-600 focus:ring-0 outline-none text-lg"
+                            placeholder="+91 98765 43210">
+                    </div>
+                </div>
+
+                <button onclick="nextStep(1)"
+                    class="mt-12 w-full bg-emerald-600 hover:bg-emerald-700 transition-colors text-white font-semibold text-xl py-6 rounded-3xl flex items-center justify-center gap-x-3">
+                    Continue to the Test
+                    <span class="text-2xl">→</span>
+                </button>
+                <p class="text-center text-xs text-slate-500 mt-6">Takes only 15–20 minutes • No signup needed</p>
+            </div>
+
+            <!-- STEP 2: TEST QUESTIONS -->
+            <div id="step2" class="step">
+                <h3 class="text-3xl font-semibold mb-6">Answer these 22 questions</h3>
+                <p class="text-slate-600 mb-8 text-sm">Based on official NCERT Exemplar &amp; CBSE 2025-26 Sample Papers
+                </p>
+
+                <!-- MATHS SECTION -->
+                <div class="mb-12">
+                    <h4 class="text-emerald-700 font-semibold text-xl mb-6 flex items-center gap-x-2"><span
+                            class="text-3xl">📐</span> Section 1: Mathematics (8 questions)</h4>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">1. Which of the following is a rational number?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q1"
+                                    value="a" class="accent-emerald-600"> a) √2</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q1"
+                                    value="b" class="accent-emerald-600"> b) π</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q1"
+                                    value="c" class="accent-emerald-600"> c) 22/7</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q1"
+                                    value="d" class="accent-emerald-600"> d) All of these</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">2. Solve: 3(x + 2) = 18</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q2"
+                                    value="a" class="accent-emerald-600"> a) x = 4</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q2"
+                                    value="b" class="accent-emerald-600"> b) x = 6</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q2"
+                                    value="c" class="accent-emerald-600"> c) x = 5</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q2"
+                                    value="d" class="accent-emerald-600"> d) x = 16/3</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">3. Father’s age is 4 times son’s age now. After 10 years, father
+                            will be 3 times son’s age. What is son’s present age?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q3"
+                                    value="a" class="accent-emerald-600"> a) 10 years</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q3"
+                                    value="b" class="accent-emerald-600"> b) 20 years</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q3"
+                                    value="c" class="accent-emerald-600"> c) 15 years</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q3"
+                                    value="d" class="accent-emerald-600"> d) 5 years</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">4. 15% of 240 is equal to:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q4"
+                                    value="a" class="accent-emerald-600"> a) 36</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q4"
+                                    value="b" class="accent-emerald-600"> b) 24</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q4"
+                                    value="c" class="accent-emerald-600"> c) 48</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q4"
+                                    value="d" class="accent-emerald-600"> d) 30</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">5. Compound interest on ₹10,000 at 10% p.a. for 2 years (compounded
+                            annually):</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q5"
+                                    value="a" class="accent-emerald-600"> a) ₹2,100</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q5"
+                                    value="b" class="accent-emerald-600"> b) ₹2,000</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q5"
+                                    value="c" class="accent-emerald-600"> c) ₹2,310</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q5"
+                                    value="d" class="accent-emerald-600"> d) ₹1,000</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">6. The additive inverse of –7/8 is:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q6"
+                                    value="a" class="accent-emerald-600"> a) 7/8</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q6"
+                                    value="b" class="accent-emerald-600"> b) –7/8</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q6"
+                                    value="c" class="accent-emerald-600"> c) 8/7</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q6"
+                                    value="d" class="accent-emerald-600"> d) 1</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">7. Which is greater: 5/8 or 7/12?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q7"
+                                    value="a" class="accent-emerald-600"> a) 5/8</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q7"
+                                    value="b" class="accent-emerald-600"> b) 7/12</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q7"
+                                    value="c" class="accent-emerald-600"> c) Both equal</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q7"
+                                    value="d" class="accent-emerald-600"> d) Cannot say</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">8. The solution of 2x – 5 = 3 is:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q8"
+                                    value="a" class="accent-emerald-600"> a) x = 4</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q8"
+                                    value="b" class="accent-emerald-600"> b) x = –4</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q8"
+                                    value="c" class="accent-emerald-600"> c) x = 1</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q8"
+                                    value="d" class="accent-emerald-600"> d) x = 8</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SCIENCE SECTION -->
+                <div class="mb-12">
+                    <h4 class="text-emerald-700 font-semibold text-xl mb-6 flex items-center gap-x-2"><span
+                            class="text-3xl">🧪</span> Section 2: Science (8 questions)</h4>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">9. Which of the following is a non-metal that remains liquid at room
+                            temperature?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q9"
+                                    value="a" class="accent-emerald-600"> a) Mercury</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q9"
+                                    value="b" class="accent-emerald-600"> b) Bromine</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q9"
+                                    value="c" class="accent-emerald-600"> c) Phosphorus</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q9"
+                                    value="d" class="accent-emerald-600"> d) Chlorine</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">10. The process of conversion of water vapour into liquid water is
+                            called:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q10"
+                                    value="a" class="accent-emerald-600"> a) Evaporation</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q10"
+                                    value="b" class="accent-emerald-600"> b) Condensation</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q10"
+                                    value="c" class="accent-emerald-600"> c) Sublimation</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q10"
+                                    value="d" class="accent-emerald-600"> d) Precipitation</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">11. Which force is responsible for the falling of an apple from a
+                            tree?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q11"
+                                    value="a" class="accent-emerald-600"> a) Muscular force</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q11"
+                                    value="b" class="accent-emerald-600"> b) Gravitational force</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q11"
+                                    value="c" class="accent-emerald-600"> c) Frictional force</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q11"
+                                    value="d" class="accent-emerald-600"> d) Magnetic force</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">12. The unit of speed is:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q12"
+                                    value="a" class="accent-emerald-600"> a) m/s</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q12"
+                                    value="b" class="accent-emerald-600"> b) m²/s</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q12"
+                                    value="c" class="accent-emerald-600"> c) m/s²</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q12"
+                                    value="d" class="accent-emerald-600"> d) km</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">13. The chemical used to kill weeds is called:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q13"
+                                    value="a" class="accent-emerald-600"> a) Fertiliser</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q13"
+                                    value="b" class="accent-emerald-600"> b) Pesticide</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q13"
+                                    value="c" class="accent-emerald-600"> c) Weedicides</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q13"
+                                    value="d" class="accent-emerald-600"> d) Manure</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">14. Metals are good conductors of:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q14"
+                                    value="a" class="accent-emerald-600"> a) Heat only</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q14"
+                                    value="b" class="accent-emerald-600"> b) Electricity only</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q14"
+                                    value="c" class="accent-emerald-600"> c) Both heat and electricity</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q14"
+                                    value="d" class="accent-emerald-600"> d) Neither</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">15. Which of the following is an example of a chemical change?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q15"
+                                    value="a" class="accent-emerald-600"> a) Melting of ice</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q15"
+                                    value="b" class="accent-emerald-600"> b) Rusting of iron</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q15"
+                                    value="c" class="accent-emerald-600"> c) Boiling of water</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q15"
+                                    value="d" class="accent-emerald-600"> d) Cutting paper</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">16. The number of electrons in the outermost shell of a noble gas
+                            is:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q16"
+                                    value="a" class="accent-emerald-600"> a) 1</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q16"
+                                    value="b" class="accent-emerald-600"> b) 2 or 8</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q16"
+                                    value="c" class="accent-emerald-600"> c) 4</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q16"
+                                    value="d" class="accent-emerald-600"> d) 0</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOCIAL SCIENCE SECTION -->
+                <div>
+                    <h4 class="text-emerald-700 font-semibold text-xl mb-6 flex items-center gap-x-2"><span
+                            class="text-3xl">📖</span> Section 3: Social Science (6 questions)</h4>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">17. Who was the founder of the Mauryan Empire?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q17"
+                                    value="a" class="accent-emerald-600"> a) Ashoka</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q17"
+                                    value="b" class="accent-emerald-600"> b) Chandragupta Maurya</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q17"
+                                    value="c" class="accent-emerald-600"> c) Bindusara</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q17"
+                                    value="d" class="accent-emerald-600"> d) Harshavardhana</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">18. The Tropic of Cancer passes through how many Indian states?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q18"
+                                    value="a" class="accent-emerald-600"> a) 6</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q18"
+                                    value="b" class="accent-emerald-600"> b) 8</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q18"
+                                    value="c" class="accent-emerald-600"> c) 7</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q18"
+                                    value="d" class="accent-emerald-600"> d) 5</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">19. The fundamental right that guarantees equality before law is
+                            part of which article?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q19"
+                                    value="a" class="accent-emerald-600"> a) Article 14</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q19"
+                                    value="b" class="accent-emerald-600"> b) Article 19</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q19"
+                                    value="c" class="accent-emerald-600"> c) Article 21</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q19"
+                                    value="d" class="accent-emerald-600"> d) Article 32</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">20. The Revolt of 1857 started from:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q20"
+                                    value="a" class="accent-emerald-600"> a) Delhi</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q20"
+                                    value="b" class="accent-emerald-600"> b) Meerut</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q20"
+                                    value="c" class="accent-emerald-600"> c) Kanpur</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q20"
+                                    value="d" class="accent-emerald-600"> d) Lucknow</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">21. Which of the following is a renewable resource?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q21"
+                                    value="a" class="accent-emerald-600"> a) Coal</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q21"
+                                    value="b" class="accent-emerald-600"> b) Solar energy</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q21"
+                                    value="c" class="accent-emerald-600"> c) Petroleum</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q21"
+                                    value="d" class="accent-emerald-600"> d) Natural gas</label>
+                        </div>
+                    </div>
+
+                    <div class="question-card bg-white border border-slate-200 rounded-3xl p-7 mb-6">
+                        <p class="font-medium mb-4">22. The leader of the Non-Cooperation Movement was:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q22"
+                                    value="a" class="accent-emerald-600"> a) Subhas Chandra Bose</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q22"
+                                    value="b" class="accent-emerald-600"> b) Mahatma Gandhi</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q22"
+                                    value="c" class="accent-emerald-600"> c) Jawaharlal Nehru</label>
+                            <label class="flex items-center gap-x-2 cursor-pointer"><input type="radio" name="q22"
+                                    value="d" class="accent-emerald-600"> d) Bhagat Singh</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mt-12">
+                    <button onclick="prevStep(2)"
+                        class="flex-1 py-6 text-lg font-medium border border-slate-300 rounded-3xl hover:bg-slate-50">←
+                        Back to Details</button>
+                    <button onclick="submitTest()"
+                        class="flex-1 py-6 text-lg font-semibold bg-emerald-600 hover:bg-emerald-700 text-white rounded-3xl">Submit
+                        Test &amp; Get Instant Report</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: REPORT -->
+            <div id="step3" class="step">
+                <div id="report-content" class="bg-white rounded-3xl p-8 shadow-inner"></div>
+
+                <div class="flex flex-col md:flex-row gap-4 mt-10">
+                    <button onclick="downloadPDF()"
+                        class="flex-1 py-6 bg-slate-900 hover:bg-black text-white font-semibold text-xl rounded-3xl flex items-center justify-center gap-x-3">
+                        📄 Download Full Report as PDF
+                    </button>
+                    <button onclick="shareWhatsApp()"
+                        class="flex-1 py-6 bg-green-600 hover:bg-green-700 text-white font-semibold text-xl rounded-3xl flex items-center justify-center gap-x-3">
+                        📱 Share Report on WhatsApp
+                    </button>
+                    <a href="https://wa.me/919876543210?text=Hi%20EmmBee%2C%20I%20just%20took%20the%20CBSE%20Diagnostic%20Test%20and%20want%20a%20free%20strategy%20call%20for%20my%20child."
+                        target="_blank"
+                        class="flex-1 py-6 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xl rounded-3xl flex items-center justify-center gap-x-3 text-center">
+                        Book FREE 15-min Strategy Call
+                    </a>
+                </div>
+
+                <p class="text-center text-slate-400 text-xs mt-8">Report generated using official NCERT Exemplar
+                    Problems &amp; CBSE 2025-26 patterns • emmbee.one</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== CONFIGURATION ====================
+        // 1. Replace these with your EmailJS credentials (free at emailjs.com)
+        const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY_HERE";      // ← CHANGE THIS
+        const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID_HERE";      // ← CHANGE THIS
+        const EMAILJS_TEMPLATE_ID = "cbse-diagnostic-report";   // ← CHANGE THIS (create template in EmailJS)
+
+        // 2. Change this to YOUR WhatsApp number (with country code)
+        const YOUR_WHATSAPP_NUMBER = "919876543210";            // ← CHANGE THIS
+
+        // Correct answers (verified from NCERT Exemplar + CBSE Sample Papers)
+        const correctAnswers = {
+            1: "c", 2: "a", 3: "a", 4: "a", 5: "a", 6: "a", 7: "a", 8: "a",
+            9: "b", 10: "b", 11: "b", 12: "a", 13: "c", 14: "c", 15: "b", 16: "b",
+            17: "b", 18: "b", 19: "a", 20: "b", 21: "b", 22: "b"
+        };
+
+        let formData = {};
+        let scores = {};
+
+        // Tailwind script initialization
+        function initTailwind() {
+            tailwind.config = { content: ["./**/*.html"] };
+        }
+
+        function updateProgress(step) {
+            document.querySelectorAll('.step-indicator').forEach(el => {
+                el.classList.remove('border-emerald-700', 'text-emerald-700');
+                el.classList.add('text-slate-400', 'border-transparent');
+            });
+            document.getElementById(`step${step}-indicator`).classList.add('border-emerald-700', 'text-emerald-700');
+        }
+
+        function goToStep(step) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById(`step${step}`).classList.add('active');
+            updateProgress(step);
+        }
+
+        function nextStep(from) {
+            // Save form data
+            formData.name = document.getElementById('student-name').value.trim();
+            formData.class = document.getElementById('student-class').value;
+            formData.email = document.getElementById('student-email').value.trim();
+            formData.whatsapp = document.getElementById('student-whatsapp').value.trim();
+
+            if (!formData.name || !formData.email || !formData.whatsapp) {
+                alert("Please fill all fields before continuing.");
+                return;
+            }
+            document.getElementById(`step${from}`).classList.remove('active');
+            document.getElementById(`step${from + 1}`).classList.add('active');
+            updateProgress(from + 1);
+        }
+
+        function prevStep(from) {
+            document.getElementById(`step${from}`).classList.remove('active');
+            document.getElementById(`step${from - 1}`).classList.add('active');
+            updateProgress(from - 1);
+        }
+
+        function getSelectedAnswers() {
+            const answers = {};
+            for (let i = 1; i <= 22; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) answers[i] = selected.value;
+            }
+            return answers;
+        }
+
+        function calculateScores(answers) {
+            let mathCorrect = 0, scienceCorrect = 0, sstCorrect = 0;
+
+            // Maths 1-8
+            for (let i = 1; i <= 8; i++) if (answers[i] === correctAnswers[i]) mathCorrect++;
+            // Science 9-16
+            for (let i = 9; i <= 16; i++) if (answers[i] === correctAnswers[i]) scienceCorrect++;
+            // SST 17-22
+            for (let i = 17; i <= 22; i++) if (answers[i] === correctAnswers[i]) sstCorrect++;
+
+            const totalCorrect = mathCorrect + scienceCorrect + sstCorrect;
+
+            return {
+                math: { correct: mathCorrect, total: 8, percent: Math.round((mathCorrect / 8) * 100) },
+                science: { correct: scienceCorrect, total: 8, percent: Math.round((scienceCorrect / 8) * 100) },
+                sst: { correct: sstCorrect, total: 6, percent: Math.round((sstCorrect / 6) * 100) },
+                overall: { correct: totalCorrect, total: 22, percent: Math.round((totalCorrect / 22) * 100) }
+            };
+        }
+
+        function generateReportHTML(scores, formData) {
+            let verdict = "";
+            let advice = "";
+
+            if (scores.overall.percent >= 80) {
+                verdict = "Excellent foundation! Your child is well-prepared for the next level.";
+                advice = "Focus on board-oriented practice and advanced application questions.";
+            } else if (scores.overall.percent >= 60) {
+                verdict = "Moderate gaps detected. With 4–6 weeks of targeted coaching, 20+ marks improvement is very likely.";
+                advice = "Prioritise Maths foundations and Science conceptual clarity.";
+            } else {
+                verdict = "Major foundation gaps – typical Class 8 → 9/10 transition shock.";
+                advice = "Urgent structured support is recommended before the pressure of Class 10 boards builds up.";
+            }
+
+            return `
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-4xl font-semibold text-emerald-700 mb-2">Learning Gap Report</h2>
+          <p class="text-slate-600">For <strong>${formData.name}</strong> • Class ${formData.class} • ${new Date().toLocaleDateString('en-IN')}</p>
+          
+          <div class="grid grid-cols-3 gap-6 my-10">
+            <div class="text-center bg-emerald-50 rounded-3xl p-6">
+              <div class="text-5xl font-bold text-emerald-700">${scores.math.percent}%</div>
+              <div class="text-sm font-medium text-emerald-600">MATHEMATICS</div>
+              <div class="text-xs text-slate-500 mt-1">${scores.math.correct}/${scores.math.total} correct</div>
+            </div>
+            <div class="text-center bg-emerald-50 rounded-3xl p-6">
+              <div class="text-5xl font-bold text-emerald-700">${scores.science.percent}%</div>
+              <div class="text-sm font-medium text-emerald-600">SCIENCE</div>
+              <div class="text-xs text-slate-500 mt-1">${scores.science.correct}/${scores.science.total} correct</div>
+            </div>
+            <div class="text-center bg-emerald-50 rounded-3xl p-6">
+              <div class="text-5xl font-bold text-emerald-700">${scores.sst.percent}%</div>
+              <div class="text-sm font-medium text-emerald-600">SOCIAL SCIENCE</div>
+              <div class="text-xs text-slate-500 mt-1">${scores.sst.correct}/${scores.sst.total} correct</div>
+            </div>
+          </div>
+
+          <div class="bg-slate-900 text-white rounded-3xl p-8 mb-8">
+            <div class="flex justify-between items-baseline">
+              <span class="text-2xl font-semibold">Overall Score</span>
+              <span class="text-6xl font-bold text-emerald-400">${scores.overall.percent}%</span>
+            </div>
+            <p class="text-emerald-300 mt-3">${verdict}</p>
+            <p class="mt-6 text-slate-300 leading-relaxed">${advice}</p>
+          </div>
+
+          <div class="text-center text-emerald-700 font-medium py-4 border-t border-b border-slate-200 my-8">
+            Your child’s biggest opportunity: <strong>Maths foundations + application-based questions</strong>
+          </div>
+
+          <p class="text-sm text-slate-600 text-center">This report is based only on official NCERT Exemplar Problems and CBSE 2025-26 sample papers.</p>
+          
+          <div class="mt-12 text-center">
+            <a href="https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=Hi%20EmmBee%2C%20I%20received%20my%20child%27s%20CBSE%20Diagnostic%20Report%20and%20would%20like%20a%20free%20strategy%20call." 
+               target="_blank"
+               class="inline-flex items-center justify-center gap-x-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xl font-semibold px-10 py-5 rounded-3xl">
+              Book your FREE 15-minute strategy call now
+              <span class="text-3xl">→</span>
+            </a>
+          </div>
+        </div>
+      `;
+        }
+
+        function submitTest() {
+            const answers = getSelectedAnswers();
+            if (Object.keys(answers).length < 22) {
+                alert("Please answer all 22 questions before submitting.");
+                return;
+            }
+
+            scores = calculateScores(answers);
+            const reportHTML = generateReportHTML(scores, formData);
+
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step3').classList.add('active');
+            document.getElementById('report-content').innerHTML = reportHTML;
+            updateProgress(3);
+
+            // Send report via EmailJS (if configured)
+            if (EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY_HERE") {
+                sendEmailReport();
+            }
+        }
+
+        function sendEmailReport() {
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+
+            const templateParams = {
+                to_email: formData.email,
+                student_name: formData.name,
+                student_class: formData.class,
+                math_score: scores.math.percent + "%",
+                science_score: scores.science.percent + "%",
+                sst_score: scores.sst.percent + "%",
+                overall_score: scores.overall.percent + "%",
+                report_link: "https://emmbee.one/cbse-diagnostic-test.html (report generated on your device)",
+                message: "Thank you for taking the CBSE Learning Gap Diagnostic Test. Your personalised report is attached in the email body."
+            };
+
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(() => console.log("✅ Report emailed successfully"))
+                .catch(err => console.error("EmailJS error:", err));
+        }
+
+        function downloadPDF() {
+            window.print();
+        }
+
+        function shareWhatsApp() {
+            const text = encodeURIComponent(`Hi! I just took the CBSE Learning Gap Diagnostic Test for ${formData.name} (Class ${formData.class}). Overall score: ${scores.overall.percent}%. Here is the report from EmmBee.One 👇`);
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        // Initialise everything
+        window.onload = function () {
+            initTailwind();
+            console.log('%c✅ EmmBee.One CBSE Diagnostic Test loaded successfully!', 'color:#10b981; font-size:14px; font-weight:bold');
+            updateProgress(1);
+        };
+    </script>
+</body>
+
+</html>
+```
