@@ -30,7 +30,6 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     
     <style>
         :root {
@@ -140,18 +139,17 @@
             color: var(--persian-blue);
         }
 
-        /* PDF Styles */
-        #pdf-template {
-            width: 794px; /* A4 width in pixels */
-            padding: 40px;
-            background: white;
-            position: absolute;
-            left: -9999px;
-            top: 0;
-            color: #1e293b;
-            font-family: Arial, sans-serif;
-            visibility: hidden;
-            z-index: -1;
+        /* PrintStyles - Ensures a professional report layout when using browser's native print */
+        @media print {
+            body { background: white !important; }
+            .site-nav, .nav-mobile, .nav-overlay, #btn-calendly, #btn-wa, footer, .gap-container > div:first-child, #indicator-1, #indicator-2, #indicator-3, .indicator-text { display: none !important; }
+            .gap-container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+            #step-3 { display: block !important; }
+            .report-card { box-shadow: none !important; border: 2px solid var(--persian-blue) !important; padding: 40px !important; border-radius: 0 !important; }
+            .score-circle { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .bg-persian\/5 { background-color: #f1f5f9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            #r-insight { border-left: 4px solid var(--gold) !important; }
+            h2 { color: var(--persian-blue) !important; }
         }
     </style>
 </head>
@@ -326,14 +324,25 @@
                 <div id="r-insight" class="bg-persian/5 border-l-4 border-gold p-6 rounded-r-xl text-left text-sm mb-10 leading-relaxed text-persian"></div>
 
                 <div class="flex flex-col gap-4">
-                    <button id="btn-pdf" class="flex-1 bg-persian hover:bg-persian-dark text-white font-bold py-5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                        Download Detailed PDF
-                    </button>
-                    <button id="btn-wa" class="flex-1 bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold py-5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                        Share via WhatsApp
-                    </button>
+                    <!-- Primary CTA: Booking -->
+                    <a href="https://calendly.com/emmbee-one/book-free-demo-session" target="_blank" id="btn-calendly" class="w-full bg-gold hover:bg-yellow-500 text-persiandark font-bold py-5 rounded-xl transition-all shadow-xl flex items-center justify-center gap-2 transform hover:scale-102">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z"></path></svg>
+                        Book 1-on-1 Strategy Walkthrough
+                    </a>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <!-- Print Option -->
+                        <button onclick="window.print()" class="flex-1 border-2 border-persian text-persian font-bold py-4 rounded-xl hover:bg-persian/5 transition-all flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2-2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2-2v4a2 2 0 002 2z"></path></svg>
+                            Print Report
+                        </button>
+
+                        <!-- Share Option -->
+                        <button id="btn-wa" class="flex-1 bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold py-4 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Share Result
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -343,52 +352,7 @@
         </footer>
     </div>
 
-    <!-- Hidden PDF Template -->
-    <div id="pdf-template">
-        <div style="border-bottom: 2px solid #D4AF37; padding-bottom: 20px; margin-bottom: 30px; text-align: center;">
-            <div style="color: #1C3F60; font-size: 28px; font-weight: bold; letter-spacing: 2px;">EmmBee.One</div>
-            <div style="color: #D4AF37; font-size: 14px; font-weight: bold; margin-top: 5px;">Boutique Academic Mentoring Studio, Dehradun</div>
-        </div>
-        
-        <h1 style="text-align: center; color: #1C3F60; font-size: 22px; margin-bottom: 20px;">CBSE Foundation Gap Diagnostic Report</h1>
-        
-        <div style="display: flex; justify-content: space-between; background: #f8fafc; padding: 15px; border-radius: 10px; margin-bottom: 30px;">
-            <div style="flex:1"><strong>Student:</strong> <span id="pdf-name"></span></div>
-            <div style="flex:1; text-align:center"><strong>Grade:</strong> Class <span id="pdf-grade"></span></div>
-            <div style="flex:1; text-align:right"><strong>Date:</strong> <span id="pdf-date"></span></div>
-        </div>
 
-        <div style="text-align: center; margin: 40px 0;">
-            <div style="font-size: 14px; color: #64748b; text-transform: uppercase; letter-spacing: 1px;">Overall Foundation Strength</div>
-            <div id="pdf-overall" style="font-size: 56px; font-weight: 800; color: #1C3F60;">0%</div>
-            <div id="pdf-verdict" style="font-size: 16px; font-weight: bold; margin-top: 10px; color: #1C3F60; max-width: 600px; margin-left: auto; margin-right: auto;"></div>
-        </div>
-
-        <div style="display: flex; gap: 20px; margin-bottom: 40px;">
-            <div style="flex:1; text-align: center; padding: 15px; background: #f1f5f9; border-radius: 10px;">
-                <div id="pdf-math" style="font-size: 24px; font-weight: bold; color: #1C3F60;">0%</div>
-                <div style="font-size: 10px; color: #64748b; text-transform: uppercase; margin-top: 5px;">Mathematics</div>
-            </div>
-            <div style="flex:1; text-align: center; padding: 15px; background: #f1f5f9; border-radius: 10px;">
-                <div id="pdf-sci" style="font-size: 24px; font-weight: bold; color: #1C3F60;">0%</div>
-                <div style="font-size: 10px; color: #64748b; text-transform: uppercase; margin-top: 5px;">Science</div>
-            </div>
-            <div style="flex:1; text-align: center; padding: 15px; background: #f1f5f9; border-radius: 10px;">
-                <div id="pdf-sst" style="font-size: 24px; font-weight: bold; color: #1C3F60;">0%</div>
-                <div style="font-size: 10px; color: #64748b; text-transform: uppercase; margin-top: 5px;">Social Science</div>
-            </div>
-        </div>
-
-        <div style="background: #FFFBEB; border-left: 5px solid #D4AF37; padding: 25px; border-radius: 5px;">
-            <h3 style="margin-top: 0; color: #92400E; font-size: 16px; margin-bottom: 15px;">Strategic Insights & Priorities</h3>
-            <div id="pdf-insight" style="font-size: 14px; line-height: 1.8; color: #451a03;"></div>
-        </div>
-
-        <div style="margin-top: 60px; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 25px; font-size: 11px; color: #94a3b8;">
-            © EmmBee.One | Focus on Clarity, Logic, and Performance.<br>
-            For a detailed 15-minute diagnostic walkthrough, visit us at: <strong>www.emmbee.one</strong>
-        </div>
-    </div>
 
     <script>
         const questions = [
@@ -548,16 +512,7 @@
             document.getElementById('r-verdict').innerText = feedback.verdict;
             document.getElementById('r-insight').innerHTML = feedback.insight;
 
-            // Populating PDF data
-            document.getElementById('pdf-name').innerText = student.name;
-            document.getElementById('pdf-grade').innerText = student.grade;
-            document.getElementById('pdf-date').innerText = student.date;
-            document.getElementById('pdf-overall').innerText = overall + '%';
-            document.getElementById('pdf-math').innerText = mPct + '%';
-            document.getElementById('pdf-sci').innerText = sPct + '%';
-            document.getElementById('pdf-sst').innerText = tPct + '%';
-            document.getElementById('pdf-verdict').innerText = feedback.verdict;
-            document.getElementById('pdf-insight').innerHTML = feedback.insight;
+
 
             // Capture lead again with results
             sendLead(`Diagnostic Result: ${student.name} (${overall}%)`, {
@@ -576,31 +531,7 @@
             showStep(3);
         };
 
-        document.getElementById('btn-pdf').onclick = async () => {
-            const btn = document.getElementById('btn-pdf');
-            const originalText = btn.innerHTML;
-            btn.innerText = "Generating PDF...";
-            const template = document.getElementById('pdf-template');
-            template.style.visibility = 'visible';
-            
-            const opt = {
-                margin: 0,
-                filename: `CBSE_Diagnostic_Report_${student.name.replace(/\s+/g, '_')}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 3, useCORS: true, logging: false },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
 
-            try {
-                await html2pdf().set(opt).from(template).save();
-            } catch (err) {
-                console.error(err);
-                alert("PDF generation failed. Please try again.");
-            } finally {
-                template.style.visibility = 'hidden';
-                btn.innerHTML = originalText;
-            }
-        };
 
         document.getElementById('btn-wa').onclick = () => {
             const overall = document.getElementById('r-overall').innerText;
