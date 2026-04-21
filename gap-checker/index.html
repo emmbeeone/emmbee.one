@@ -31,6 +31,11 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Calendly link widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly link widget end -->
+    
     <style>
         :root {
             --persian-blue: #1C3F60;
@@ -351,17 +356,16 @@
                                 <p class="text-xs font-bold text-[#25D366] uppercase tracking-wider">Discuss Results</p>
                                 <p class="text-sm font-bold text-persian group-hover:text-persian-dark transition">WhatsApp Manoj Sir</p>
                             </div>
-                        </a>
-                        <!-- Option 2: Calendly -->
-                        <a href="https://calendly.com/emmbee-one/book-free-demo-session" target="_blank" class="flex items-center gap-4 p-5 bg-gold/5 rounded-2xl border border-gold/20 transition-all hover:bg-gold/10 group">
+                                   <!-- Option 2: Calendly -->
+                        <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmbee-one/book-free-demo-session'});return false;" class="flex items-center gap-4 p-5 bg-gold/5 rounded-2xl border border-gold/20 transition-all hover:bg-gold/10 group w-full">
                             <div class="w-12 h-12 bg-gold text-persiandark rounded-xl flex items-center justify-center shrink-0">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z"></path></svg>
                             </div>
-                            <div class="text-left">
-                                <p class="text-xs font-bold text-gold uppercase tracking-wider">Plan the Fix</p>
-                                <p class="text-sm font-bold text-persian group-hover:text-persian-dark transition">Book Strategy Session</p>
+                            <div class="text-left text-persian group-hover:text-persiandark transition">
+                                <p class="text-xs font-bold uppercase tracking-wider text-gold">Plan the Fix</p>
+                                <p class="text-sm font-bold">Book Strategy Session</p>
                             </div>
-                        </a>
+                        </button>
                         <!-- Option 3: Call -->
                         <a href="tel:7505705644" class="flex items-center gap-4 p-5 bg-blue-50 rounded-2xl border border-blue-100 transition-all hover:bg-blue-100 group">
                             <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center shrink-0">
@@ -576,7 +580,7 @@
 
         document.getElementById('btn-wa').onclick = () => {
             const overall = document.getElementById('r-overall').innerText;
-            const message = `*📊 CBSE Foundation Gap Report - EmmBee.One*\n\n👤 Student: *${student.name}*\n📚 Class: *${student.grade}*\n📈 Overall Strength: *${overall}*\n\n💡 *Actionable Insight:*\n${document.getElementById('r-verdict').innerText}\n\n🔗 View details: www.emmbee.one/gap-checker`;
+            const message = `*📊 CBSE Foundation Gap Report - EmmBee.One*\n\n👤 Student: *${student.name}*\n📚 Class: *${student.grade}*\n📈 Overall Strength: *${overall}*\n\n💡 *Actionable Insight:*\n${document.getElementById('r-verdict').innerText}\n\n*Let's bridge these gaps. Visit www.emmbee.one to book a Free Strategy Walkthrough (no commitment required).*`;
             window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
         };
 

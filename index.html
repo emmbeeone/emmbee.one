@@ -116,6 +116,11 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        #contact-form-section {
+            scroll-margin-top: 100px;
         }
 
         h1,
@@ -154,6 +159,10 @@
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #contact-form-section {
+            scroll-margin-top: 100px;
         }
 
         .sanskrit-glow {
@@ -287,13 +296,13 @@
 
             <!-- Main CTA -->
             <div class="flex flex-col items-center gap-6">
-                <a href="#contact"
+                <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmbee-one/book-free-demo-session'});return false;"
                     class="bg-gold hover:bg-yellow-500 text-persiandark font-extrabold text-lg md:text-xl px-10 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(212,175,55,0.4)] relative z-20">
-                    Take the First Step
-                </a>
+                    Book Free Demo session
+                </button>
                 
                 <!-- Subtle Secondary CTA -->
-                <a href="gap-checker/" class="text-white/60 hover:text-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase underline underline-offset-8 transition-all duration-300 hover:opacity-100 relative z-20 text-center">
+                <a href="gap-checker/" class="text-white/60 hover:text-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:opacity-100 relative z-20 text-center inline-block pb-1 border-b border-white/20 hover:border-gold">
                     Check Foundation Gaps (Free Diagnostic for Students)
                 </a>
             </div>
@@ -697,8 +706,7 @@
                         </h3>
                         <p
                             class="text-sm md:text-base text-gray-700 font-medium mb-6 bg-gold/10 p-3 rounded-lg border border-gold/20">
-                            Our academic structure is designed to support competency-based learning recommended in
-                            modern CBSE guidelines.
+                            <strong>Precision to the core in Maths and Science.</strong> Our academic structure is designed to support competency-based learning recommended in modern CBSE guidelines.
                         </p>
                         <ul class="space-y-3 text-gray-600">
                             <li class="flex items-start"><span class="text-gold mr-2 font-bold">•</span> Only 10
