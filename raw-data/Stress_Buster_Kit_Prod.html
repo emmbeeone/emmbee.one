@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Board Exam Stress Buster Kit 2026</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent: #10b981;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: var(--text);
+            line-height: 1.65;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 45px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        header .tagline {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            opacity: 0.95;
+        }
+
+        header .subtitle {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 5px;
+        }
+
+        main {
+            padding: 35px;
+        }
+
+        section {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            color: var(--text);
+            margin: 20px 0 8px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #334155;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .highlight-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .step-card {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .step-card strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .technique-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 3px solid #cbd5e1;
+            margin: 15px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -27px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .timeline-item h4 {
+            font-size: 1rem;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .checklist,
+        .crosslist {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li::before {
+            content: "✅ ";
+            margin-right: 5px;
+        }
+
+        .crosslist li::before {
+            content: "❌ ";
+            margin-right: 5px;
+        }
+
+        .parent-section {
+            background: #fefce8;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #fef08a;
+        }
+
+        .alert-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .cta-banner h2 {
+            color: white;
+            justify-content: center;
+        }
+
+        .cta-banner h2::before {
+            display: none;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-dark);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: #f8fafc;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.9rem;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>EmmBee.One</h1>
+            <p class="tagline">CBSE Board Exam Stress Buster Kit 2026</p>
+            <p class="subtitle">Stay Calm. Stay Focused. Perform Better.</p>
+            <p style="margin-top: 12px; font-size: 1rem; opacity: 0.9;">For Class 10 Students &amp; Parents</p>
+        </header>
+
+        <main>
+            <p><strong>Exam stress is normal. Panic is optional.</strong></p>
+            <p>This toolkit combines CBSE guidance, NCERT-backed techniques, and proven stress-management methods to
+                help students stay calm and perform at their best.</p>
+
+            <section>
+                <h2>Why Exam Stress Happens</h2>
+                <p>If you're feeling stressed before exams, you're not alone.</p>
+                <p>Most students feel pressure because of:</p>
+                <ul>
+                    <li>Fear of failure</li>
+                    <li>Parent expectations</li>
+                    <li>Comparison with friends</li>
+                    <li>Last-minute syllabus panic</li>
+                    <li>Too much screen time</li>
+                    <li>Poor revision planning</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>Remember:</strong></p>
+                    <ul>
+                        <li>Stress does not mean you're unprepared.</li>
+                        <li>It usually means you care.</li>
+                        <li>The goal is not to eliminate stress completely.</li>
+                        <li>The goal is to manage it well.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>The 5-Step Stress Reset Framework</h2>
+                <div class="step-card">
+                    <strong>1. Acknowledge</strong>
+                    <p>Accept that stress is normal.</p>
+                    <p>Say:</p>
+                    <p><em>"Yes, I feel stressed — and that's okay."</em></p>
+                </div>
+                <div class="step-card">
+                    <strong>2. Assess</strong>
+                    <p>Ask yourself:</p>
+                    <ul>
+                        <li>What exactly is stressing me?</li>
+                        <li>Which subject feels difficult?</li>
+                        <li>Am I overthinking results?</li>
+                    </ul>
+                    <p>Write it down.</p>
+                    <p>Clarity reduces anxiety.</p>
+                </div>
+                <div class="step-card">
+                    <strong>3. Alleviate</strong>
+                    <p>Use quick calming tools:</p>
+                    <ul>
+                        <li>Deep breathing</li>
+                        <li>Short walk</li>
+                        <li>Stretching</li>
+                        <li>Drinking water</li>
+                        <li>Taking a short break</li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <strong>4. Adjust</strong>
+                    <p>Fix your study strategy.</p>
+                    <p>Examples:</p>
+                    <ul>
+                        <li>Reduce distractions</li>
+                        <li>Create a timetable</li>
+                        <li>Prioritize weak subjects</li>
+                        <li>Practice past papers</li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <strong>5. Avoid</strong>
+                    <p>Avoid:</p>
+                    <ul>
+                        <li>Comparing marks</li>
+                        <li>Late-night cramming</li>
+                        <li>Negative self-talk</li>
+                        <li>Overuse of social media</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Instant Calm Techniques (2–5 Minutes)</h2>
+                <div class="technique-card">
+                    <h3>1. Deep Breathing (CBSE Recommended)</h3>
+                    <p>Close your eyes.</p>
+                    <ul>
+                        <li>Inhale for 4 seconds</li>
+                        <li>Hold for 4 seconds</li>
+                        <li>Exhale for 6 seconds</li>
+                    </ul>
+                    <p>Repeat 5 times.</p>
+                    <p><strong>Why it works:</strong></p>
+                    <ul>
+                        <li>Slows heart rate</li>
+                        <li>Reduces panic</li>
+                        <li>Improves focus</li>
+                    </ul>
+                    <p>Use before studying or entering the exam hall.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h3>2. Progressive Muscle Relaxation (NCERT Supported)</h3>
+                    <p>Tighten and relax each muscle group:</p>
+                    <ul>
+                        <li>Feet</li>
+                        <li>Legs</li>
+                        <li>Hands</li>
+                        <li>Shoulders</li>
+                        <li>Face</li>
+                    </ul>
+                    <p>Hold tension for 5 seconds. Release slowly.</p>
+                    <p>This helps release physical stress.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h3>3. 4-7-8 Breathing</h3>
+                    <p>A popular stress relief technique:</p>
+                    <ul>
+                        <li>Inhale for 4 seconds</li>
+                        <li>Hold for 7 seconds</li>
+                        <li>Exhale for 8 seconds</li>
+                    </ul>
+                    <p>Repeat 4 rounds.</p>
+                    <p>Use when anxiety feels intense.</p>
+                </div>
+
+                <div class="technique-card">
+                    <h3>4. Quick Movement Reset</h3>
+                    <p>Do this for 2 minutes:</p>
+                    <ul>
+                        <li>Walk</li>
+                        <li>Stretch</li>
+                        <li>Jumping jacks</li>
+                        <li>Shoulder rolls</li>
+                    </ul>
+                    <p>Movement helps break stress loops.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Positive Exam Affirmations</h2>
+                <p>Repeat these daily:</p>
+                <ul class="checklist">
+                    <li>I am calm and focused</li>
+                    <li>I have prepared well</li>
+                    <li>One question at a time</li>
+                    <li>I can handle this</li>
+                    <li>My marks do not define me</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>7-Day Pre-Exam Routine</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>7 Days Before Exam</h4>
+                        <ul>
+                            <li>Finish major syllabus</li>
+                            <li>List weak topics</li>
+                            <li>Start revision schedule</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>5 Days Before Exam</h4>
+                        <ul>
+                            <li>Solve sample papers</li>
+                            <li>Revise formulas</li>
+                            <li>Practice writing speed</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>3 Days Before Exam</h4>
+                        <ul>
+                            <li>Focus only on revision</li>
+                            <li>Avoid learning new chapters</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>1 Day Before Exam</h4>
+                        <ul>
+                            <li>Light revision only</li>
+                            <li>Pack stationery</li>
+                            <li>Sleep early</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Daily Health Checklist</h2>
+                <ul class="checklist">
+                    <li>Sleep 7–8 hours</li>
+                    <li>Drink enough water</li>
+                    <li>Eat balanced meals</li>
+                    <li>Limit junk food</li>
+                    <li>Move your body daily</li>
+                    <li>Take breaks while studying</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Exam Hall: 60-Second Reset</h2>
+                <p>Feeling nervous before starting?</p>
+                <p>Use this:</p>
+                <div class="step-card">
+                    <strong>Step 1</strong> Take 3 deep breaths<br>
+                    <strong>Step 2</strong> Read the full paper calmly<br>
+                    <strong>Step 3</strong> Start with easier questions<br>
+                    <strong>Step 4</strong> Build confidence and momentum
+                </div>
+            </section>
+
+            <section>
+                <h2>For Parents</h2>
+                <p>Your words matter more than marks right now.</p>
+                <div class="parent-section">
+                    <h3>Avoid Saying:</h3>
+                    <ul class="crosslist">
+                        <li>"Sharma ji's child scored better."</li>
+                        <li>"Your future depends on this exam."</li>
+                        <li>"Don't disappoint us."</li>
+                    </ul>
+                    <h3 style="margin-top: 15px;">Say Instead:</h3>
+                    <ul class="checklist">
+                        <li>"Do your best."</li>
+                        <li>"We're proud of your effort."</li>
+                        <li>"This exam is important—but not everything."</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>When To Seek Help</h2>
+                <p>If your child shows:</p>
+                <ul>
+                    <li>Extreme panic</li>
+                    <li>Sleep problems</li>
+                    <li>Frequent crying</li>
+                    <li>Refusing to study</li>
+                    <li>Severe self-doubt</li>
+                </ul>
+                <div class="alert-box">
+                    <p><strong>Please seek support immediately.</strong></p>
+                    <p>CBSE has provided psycho-social support helplines during board season.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Final Reminder</h2>
+                <p>Exams are important.</p>
+                <p>But they are not bigger than your health.</p>
+                <p>Stay calm.</p>
+                <p>Stay disciplined.</p>
+                <p>Trust your preparation.</p>
+                <p><strong>You’ve got this.</strong></p>
+            </section>
+
+            <div class="cta-banner">
+                <h2>Need Personalised Academic Support?</h2>
+                <p><strong>EmmBee.One — Structured Academic Mentoring</strong></p>
+                <p>We help students improve:</p>
+                <ul
+                    style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 15px 0;">
+                    <li>Maths</li>
+                    <li>Science</li>
+                    <li>Study discipline</li>
+                    <li>Exam confidence</li>
+                </ul>
+                <p><strong>Book Your Free Strategy Session</strong></p>
+                <p>Visit: <a href="https://www.emmbee.one"
+                        style="color: white; text-decoration: underline;">www.emmbee.one</a></p>
+                <p>Or scan the QR code on the final page.</p>
+            </div>
+        </main>
+
+        <footer>
+            Made with care by EmmBee.OneDehradun | Structured Academic Mentoring
+        </footer>
+    </div>
+</body>
+
+</html>

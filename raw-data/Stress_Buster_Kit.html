@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 10 CBSE Stress Buster Kit | EmmBee.One</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-teal:  #0D7377;
+      --teal:       #14B8A6;
+      --cyan:       #06B6D4;
+      --sky:        #0EA5E9;
+      --violet:     #6366F1;
+      --indigo:     #4F46E5;
+      --blue:       #2563EB;
+      --mint:       #14B8A6;
+      --white:      #FFFFFF;
+      --ink:        #0F172A;
+      --soft:       #F0F9FF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page { size: A4; margin: 1cm; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #FFF8F0;
+      color: var(--ink);
+      padding: 24px 16px;
+      line-height: 1.65;
+    }
+
+    /* ─── PAGE WRAPPER ─── */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 28px;
+      box-shadow: 0 12px 48px rgba(132, 94, 194, 0.18);
+      overflow: hidden;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      background: linear-gradient(135deg, #0D7377 0%, #14B8A6 40%, #06B6D4 100%);
+      padding: 40px 32px 56px;
+      text-align: center;
+      position: relative;
+      overflow: visible;
+    }
+
+    /* Decorative blobs */
+    header::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 150px; height: 150px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 50%;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 40px;
+      background: var(--white);
+      border-radius: 50% 50% 0 0 / 40px 40px 0 0;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.35);
+      border: 2px solid rgba(255,255,255,0.7);
+      color: var(--white);
+      font-family: 'Baloo 2', cursive;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 30px;
+      margin-bottom: 14px;
+    }
+
+    header h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--white);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    header .tagline {
+      color: rgba(255,255,255,0.95);
+      font-size: 1rem;
+      font-weight: 600;
+      max-width: 520px;
+      margin: 0 auto 16px;
+    }
+
+    .header-emoji-row {
+      font-size: 1.8rem;
+      letter-spacing: 6px;
+      margin-top: 4px;
+    }
+
+    /* ─── CONTENT AREA ─── */
+    .content {
+      padding: 12px 28px 32px;
+    }
+
+    /* ─── INTRO BANNER ─── */
+    .intro {
+      background: linear-gradient(135deg, #E0F2FE, #F0E7FF);
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin: 20px 0 28px;
+      border-left: 6px solid #4F46E5;
+      position: relative;
+    }
+
+    .intro .hi {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #4F46E5;
+      margin-bottom: 6px;
+    }
+
+    .intro p {
+      color: #1E3A8A;
+      font-size: 0.97rem;
+    }
+
+    /* ─── SECTION HEADINGS ─── */
+    .section { margin-bottom: 28px; }
+
+    .section-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      color: var(--white);
+    }
+
+    .section-title.orange  { background: linear-gradient(90deg, #0D7377, #14B8A6); }
+    .section-title.teal    { background: linear-gradient(90deg, #06B6D4, #0EA5E9); }
+    .section-title.yellow  { background: linear-gradient(90deg, #14B8A6, #0EA5E9); color: #fff; }
+    .section-title.purple  { background: linear-gradient(90deg, #6366F1, #4F46E5); }
+    .section-title.blue    { background: linear-gradient(90deg, #0EA5E9, #6366F1); }
+    .section-title.rose    { background: linear-gradient(90deg, #0EA5E9, #06B6D4); }
+
+    .section-title .icon { font-size: 1.4rem; }
+
+    /* ─── 5 A'S LIST ─── */
+    .five-as { display: flex; flex-direction: column; gap: 10px; }
+
+    .five-a-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--soft);
+      border-radius: 14px;
+      padding: 14px 18px;
+      border-left: 5px solid transparent;
+    }
+
+    .five-a-item:nth-child(1) { border-color: #06B6D4; }
+    .five-a-item:nth-child(2) { border-color: #14B8A6; }
+    .five-a-item:nth-child(3) { border-color: #0EA5E9; }
+    .five-a-item:nth-child(4) { border-color: #6366F1; }
+    .five-a-item:nth-child(5) { border-color: #4F46E5; }
+
+    .five-a-num {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      color: var(--white);
+    }
+
+    .five-a-item:nth-child(1) .five-a-num { background: #06B6D4; }
+    .five-a-item:nth-child(2) .five-a-num { background: #14B8A6; }
+    .five-a-item:nth-child(3) .five-a-num { background: #0EA5E9; }
+    .five-a-item:nth-child(4) .five-a-num { background: #6366F1; }
+    .five-a-item:nth-child(5) .five-a-num { background: #4F46E5; }
+
+    .five-a-text strong {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.05rem;
+      display: block;
+    }
+
+    /* ─── TECHNIQUE CARDS ─── */
+    .tech-cards { display: flex; flex-direction: column; gap: 12px; }
+
+    .tech-card {
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .tech-card.c1 { background: #F0F9FF; border-left: 5px solid #0EA5E9; }
+    .tech-card.c2 { background: #F0FDFA; border-left: 5px solid #14B8A6; }
+    .tech-card.c3 { background: #E0F2FE; border-left: 5px solid #06B6D4; }
+    .tech-card.c4 { background: #EEF2FF; border-left: 5px solid #6366F1; }
+
+    .tech-num {
+      width: 38px; height: 38px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .tech-card.c1 .tech-num { background: #0EA5E9; }
+    .tech-card.c2 .tech-num { background: #14B8A6; }
+    .tech-card.c3 .tech-num { background: #06B6D4; }
+    .tech-card.c4 .tech-num { background: #6366F1; }
+
+    .tech-name {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+
+    .tech-desc { font-size: 0.92rem; color: #444; }
+
+    /* ─── ROUTINE GRID ─── */
+    .routine-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .routine-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 12px 18px;
+    }
+
+    .routine-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .routine-text { font-size: 0.95rem; font-weight: 600; color: #0F4C81; }
+
+    /* ─── EXAM HALL RESET ─── */
+    .reset-box {
+      background: linear-gradient(135deg, #E0F2FE, #F0FDFA);
+      border-radius: 18px;
+      padding: 20px 24px;
+      border-left: 6px solid #06B6D4;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .reset-icon { font-size: 2.5rem; flex-shrink: 0; }
+
+    .reset-steps { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+
+    .reset-step {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #0F4C81;
+    }
+
+    .step-dot {
+      width: 28px; height: 28px;
+      background: #06B6D4;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    /* ─── AFFIRMATIONS ─── */
+    .affirmations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    .affirmation {
+      padding: 11px 20px;
+      border-radius: 40px;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 2px solid transparent;
+    }
+
+    .affirmation.a1 { background: #E0F2FE; color: #0369A1; border-color: #06B6D4; }
+    .affirmation.a2 { background: #EFF6FF; color: #1E40AF; border-color: #0EA5E9; }
+    .affirmation.a3 { background: #F0FDFA; color: #115E59; border-color: #14B8A6; }
+    .affirmation.a4 { background: #EEF2FF; color: #312E81; border-color: #6366F1; }
+
+    /* ─── HELPLINE BOX ─── */
+    .helpline {
+      background: linear-gradient(135deg, #0D7377, #06B6D4);
+      border-radius: 22px;
+      padding: 28px 28px;
+      text-align: center;
+      color: var(--white);
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .helpline::before {
+      content: '🫶';
+      position: absolute;
+      font-size: 6rem;
+      opacity: 0.12;
+      right: 10px; top: -10px;
+    }
+
+    .helpline h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .helpline .phone {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin: 8px 0 4px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .helpline .label {
+      font-size: 0.95rem;
+      opacity: 0.95;
+      font-weight: 600;
+    }
+
+    .helpline .note {
+      display: inline-block;
+      margin-top: 12px;
+      background: rgba(255,255,255,0.22);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── SOURCES ─── */
+    .sources {
+      background: #F0F9FF;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 0.8rem;
+      color: #0F4C81;
+      text-align: center;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .sources strong { color: #0D7377; }
+    .sources a { color: #0D7377; text-decoration: none; font-weight: 600; }
+
+    /* ─── CTA ─── */
+    .cta {
+      background: linear-gradient(135deg, #E0F2FE, #F0FDFA);
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .cta h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0D7377;
+      margin-bottom: 4px;
+    }
+
+    .cta p { font-size: 0.88rem; color: #0F4C81; margin-bottom: 16px; }
+
+    .qr-placeholder {
+      width: 160px; height: 160px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 2px dashed #06B6D4;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      color: #0D7377;
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 12px;
+      font-weight: 600;
+    }
+
+    .qr-label {
+      font-size: 0.78rem;
+      color: #0D7377;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      text-align: center;
+      padding: 16px 20px;
+      font-size: 0.8rem;
+      color: #0D7377;
+      border-top: 2px dashed #C8E6F5;
+      font-weight: 600;
+    }
+
+    footer span { color: #06B6D4; }
+
+    /* ─── PRINT ─── */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { box-shadow: none; border-radius: 0; max-width: 100%; }
+
+      header, .section-title, .five-a-num, .tech-num, .helpline, .affirmation,
+      .reset-box, .five-a-item, .tech-card, .intro, .cta, .sources {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .section, .helpline, .cta, .sources, .tech-card, .five-a-item {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ═══ HEADER ═══ -->
+    <header>
+      <div class="header-badge">✅ Backed by CBSE Official Guidelines</div>
+      <h1>Class 10 Board Exam<br>Stress Buster Kit 🎯</h1>
+      <div class="tagline">Stay calm, stay focused, and walk into your exam with confidence!</div>
+      <div class="header-emoji-row">🌟 💪 🧠 📚 🌈</div>
+    </header>
+
+    <div class="content">
+
+      <!-- ═══ INTRO ═══ -->
+      <div class="intro">
+        <div class="hi">Dear Class 10 Student & Parent 👋</div>
+        <p>Exam stress is completely normal — and CBSE has officially recognised it. This kit is built <strong>100% from CBSE's own stress-management resources</strong> so you can face the 2026 boards with clarity, calm, and confidence.</p>
+      </div>
+
+      <!-- ═══ SECTION 1 : 5 A'S ═══ -->
+      <div class="section">
+        <div class="section-title orange">
+          <span class="icon">📌</span> CBSE's Official 5 A's to Control Exam Stress
+        </div>
+        <div class="five-as">
+          <div class="five-a-item">
+            <div class="five-a-num">1</div>
+            <div class="five-a-text">
+              <strong>Acknowledge</strong>
+              Accept that stress is natural. Every student feels it — you're not alone.
+            </div>
+          </div>
+          <div class="five-a-item">
+            <div class="five-a-num">2</div>
+            <div class="five-a-text">
+              <strong>Appreciate</strong>
+              Focus on what you have already prepared instead of what is left.
+            </div>
+          </div>
+          <div class="five-a-item">
+            <div class="five-a-num">3</div>
+            <div class="five-a-text">
+              <strong>Alleviate</strong>
+              Use relaxation techniques — deep breathing, short walks, short breaks.
+            </div>
+          </div>
+          <div class="five-a-item">
+            <div class="five-a-num">4</div>
+            <div class="five-a-text">
+              <strong>Alter</strong>
+              Change negative thoughts into realistic ones. Rewrite the story in your head.
+            </div>
+          </div>
+          <div class="five-a-item">
+            <div class="five-a-num">5</div>
+            <div class="five-a-text">
+              <strong>Avoid</strong>
+              Avoid last-minute cramming and comparison with others.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SECTION 2 : TECHNIQUES ═══ -->
+      <div class="section">
+        <div class="section-title teal">
+          <span class="icon">🧘</span> 5 Instant Relief Techniques (CBSE Recommended)
+        </div>
+        <div class="tech-cards">
+          <div class="tech-card c1">
+            <div class="tech-num">1</div>
+            <div>
+              <div class="tech-name">Deep Breathing (5 seconds)</div>
+              <div class="tech-desc">Shut your eyes → Inhale for 4 counts → Hold 4 → Exhale for 6. Repeat 5 times. CBSE calls this <em>"the quickest and most effective way."</em></div>
+            </div>
+          </div>
+          <div class="tech-card c2">
+            <div class="tech-num">2</div>
+            <div>
+              <div class="tech-name">Progressive Muscle Relaxation</div>
+              <div class="tech-desc">Tighten and release each muscle group (toes → face) for 5 seconds each. Reduces physical tension instantly.</div>
+            </div>
+          </div>
+          <div class="tech-card c3">
+            <div class="tech-num">3</div>
+            <div>
+              <div class="tech-name">4-7-8 Breathing</div>
+              <div class="tech-desc">Inhale for 4 seconds → Hold breath for 7 seconds → Exhale slowly for 8 seconds. CBSE-endorsed relaxation technique.</div>
+            </div>
+          </div>
+          <div class="tech-card c4">
+            <div class="tech-num">4</div>
+            <div>
+              <div class="tech-name">Positive Self-Talk</div>
+              <div class="tech-desc">Replace "I will fail" with "I am prepared and I will do my best." Your words shape your mindset.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SECTION 3 : ROUTINE ═══ -->
+      <div class="section">
+        <div class="section-title yellow">
+          <span class="icon">📅</span> 7-Day Pre-Exam Daily Routine (CBSE Approved)
+        </div>
+        <div class="routine-list">
+          <div class="routine-row">
+            <div class="routine-icon">🌅</div>
+            <div class="routine-text">Sleep 7–8 hours every night — your brain consolidates memory during sleep!</div>
+          </div>
+          <div class="routine-row">
+            <div class="routine-icon">🥗</div>
+            <div class="routine-text">Eat balanced meals and stay well hydrated throughout the day.</div>
+          </div>
+          <div class="routine-row">
+            <div class="routine-icon">🚶</div>
+            <div class="routine-text">20–30 minutes of light exercise or a walk daily to clear your head.</div>
+          </div>
+          <div class="routine-row">
+            <div class="routine-icon">📝</div>
+            <div class="routine-text">Make a realistic timetable — 6–8 hours of study with regular breaks built in.</div>
+          </div>
+          <div class="routine-row">
+            <div class="routine-icon">🧘</div>
+            <div class="routine-text">10 minutes of yoga or meditation each morning to start fresh.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SECTION 4 : EXAM HALL ═══ -->
+      <div class="section">
+        <div class="section-title blue">
+          <span class="icon">⏱️</span> In the Exam Hall — 60-Second Reset
+        </div>
+        <div class="reset-box">
+          <div class="reset-icon">💡</div>
+          <div>
+            <div style="font-family:'Baloo 2',cursive; font-weight:800; color:#5a3900; margin-bottom:10px;">When you feel nervous, do this:</div>
+            <div class="reset-steps">
+              <div class="reset-step"><div class="step-dot">1</div> Read the question paper calmly — don't rush.</div>
+              <div class="reset-step"><div class="step-dot">2</div> Close your eyes and take 3 slow deep breaths.</div>
+              <div class="reset-step"><div class="step-dot">3</div> Start with the questions you know best.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SECTION 5 : AFFIRMATIONS ═══ -->
+      <div class="section">
+        <div class="section-title rose">
+          <span class="icon">💬</span> Powerful Affirmations (Say These Every Morning!)
+        </div>
+        <div class="affirmations">
+          <span class="affirmation a1">"I am calm and focused"</span>
+          <span class="affirmation a2">"I have prepared well"</span>
+          <span class="affirmation a3">"One question at a time"</span>
+          <span class="affirmation a4">"This is just one exam"</span>
+        </div>
+      </div>
+
+      <!-- ═══ HELPLINE ═══ -->
+      <div class="helpline">
+        <h3>📞 You Are Never Alone</h3>
+        <div class="label">Official CBSE 24×7 Toll-Free Psycho-Social Counseling</div>
+        <div class="phone">1800-11-8004</div>
+        <div class="note">Available in Hindi & English • Completely Free • Fully Confidential</div>
+      </div>
+
+      <!-- ═══ SOURCES ═══ -->
+      <div class="sources">
+        <strong>Sources & Official Links</strong><br>
+        • Exam Stress: <a href="https://www.cbse.gov.in/examstress.htm">cbse.gov.in/examstress.htm</a><br>
+        • Exam Anxiety Tips: <a href="https://www.cbse.gov.in/examanxiety.htm">cbse.gov.in/examanxiety.htm</a><br>
+        • Psycho-Social Counseling: CBSE Official Press Release, 06 Jan 2026
+      </div>
+
+      <!-- ═══ CTA ═══ -->
+      <div class="cta">
+        <h3>🚀 Ready to turn stress into success?</h3>
+        <p>Scan the QR code below for free resources, updates, and more support.</p>
+        <div class="qr-placeholder">
+          📱 QR CODE<br>PLACEHOLDER<br>
+          <small>Scan for free resources</small>
+        </div>
+        <div class="qr-label">Replace with your actual QR code image in the final version</div>
+      </div>
+
+    </div><!-- end .content -->
+
+    <footer>
+      Made with <span>♥</span> by EmmBee.One • Structured Academic Mentoring
+    </footer>
+  </div>
+</body>
+</html>

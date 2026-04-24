@@ -186,10 +186,19 @@
             background: #D4AF37;
         }
 
-        /* Prevent background shift when Calendly popup is active */
-        body.calendly-enabled {
-            overflow: hidden !important;
-            padding-right: 0 !important;
+        /* EXIT INTENT MODAL STYLES */
+        #exit-intent-modal {
+            transition: all 0.3s ease-out;
+            display: none;
+        }
+        #exit-intent-modal.active {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+        }
+        .exit-modal-glass {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 50px 100px -20px rgba(10, 25, 47, 0.4), 0 30px 60px -30px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -309,10 +318,15 @@
                     Book Free Demo session
                 </button>
 
-                <!-- Subtle Secondary CTA -->
+                <!-- Highlighted Secondary CTA -->
                 <a href="gap-checker/"
-                    class="text-white/60 hover:text-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:opacity-100 relative z-20 text-center inline-block pb-1 border-b border-white/20 hover:border-gold">
-                    Check Foundation Gaps (Free Diagnostic for Students)
+                    class="bg-white/10 hover:bg-white/20 text-white hover:text-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 px-8 py-3 rounded-full border border-white/20 hover:border-gold shadow-lg backdrop-blur-sm relative z-20 text-center inline-block">
+                    <span class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Check Foundation Gaps (Free Diagnostic)
+                    </span>
                 </a>
             </div>
         </div>
@@ -1469,35 +1483,63 @@
         </div>
     </footer>
 
-    <!-- SHARE MODAL OVERLAY -->
-    <div id="share-modal"
-        class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300">
+    <!-- EXIT INTENT MODAL (STRESS BUSTER KIT) -->
+    <div id="exit-intent-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4 transition-all duration-300">
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-persiandark/80 backdrop-blur-md transition-opacity" onclick="closeShareModal()">
-        </div>
+        <div class="absolute inset-0 bg-persiandark/90 backdrop-blur-md" onclick="closeExitModal()"></div>
 
-        <!-- Glass Modal Content -->
-        <div class="relative bg-white/10 backdrop-blur-2xl border border-white/20 p-8 md:p-10 rounded-[2rem] shadow-[0_30px_80px_rgba(0,0,0,0.6)] w-full max-w-lg transform scale-95 opacity-0 transition-all duration-300"
-            id="share-modal-content">
-
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-[2.5rem] shadow-2xl w-full max-w-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="exit-modal-content">
             <!-- Close Button -->
-            <button onclick="closeShareModal()"
-                class="absolute top-4 right-4 md:top-6 md:right-6 text-gray-300 hover:text-white bg-black/20 hover:bg-black/40 rounded-full p-2 transition-colors focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                    </path>
-                </svg>
+            <button onclick="closeExitModal()" class="absolute top-6 right-6 text-gray-400 hover:text-persiandark transition-colors z-20">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
 
-            <h3 class="text-2xl font-serif font-bold text-white mb-3 text-center md:text-left pr-8">Share EmmBee.One
-            </h3>
-            <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 font-light text-center md:text-left">
-                Know someone looking for structured academic mentoring? Review the pre-written message below and
-                securely forward it to them.
-            </p>
+            <div class="flex flex-col md:flex-row h-full">
+                <!-- Left Side: Offer -->
+                <div class="w-full md:w-7/12 p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-100">
+                    <span class="bg-gold/20 text-gold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block">Free Gift for Class 10</span>
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-persiandark mb-4">Board Exam Stress Buster Kit 2026</h3>
+                    <p class="text-gray-600 text-sm mb-6">CBSE-approved techniques to stay calm and perform better. Download yours now!</p>
 
-            <!-- Message Preview -->
-            <div
+                    <form id="exit-lead-form" class="space-y-4">
+                        <input type="hidden" name="access_key" value="5b17f4f9-ab49-4755-9afa-2882fb0be379">
+                        <input type="hidden" name="subject" value="New Stress Buster Kit Lead from Home Page">
+                        <input type="hidden" name="from_name" value="EmmBee.One Gift">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        
+                        <div>
+                            <input type="text" name="name" placeholder="Student/Parent Name" required class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition text-sm font-medium">
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition text-sm font-medium">
+                        </div>
+                        <div>
+                            <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition text-sm font-medium">
+                        </div>
+                        <button type="submit" id="exit-submit-btn" class="w-full bg-persian hover:bg-persiandark text-white font-bold py-4 rounded-xl shadow-lg transition transform hover:-translate-y-1">
+                            Download Now (PDF)
+                        </button>
+                        <p class="text-[10px] text-center text-gray-400 mt-2">Privacy focused. No spam, only value.</p>
+                    </form>
+                </div>
+
+                <!-- Right Side: Viral Share (Verbatim Replica) -->
+                <div class="w-full md:w-5/12 bg-gray-50 p-8 md:p-10 flex flex-col justify-center items-center text-center">
+                    <h4 class="text-lg font-serif font-bold text-persian mb-3">Share with a Friend</h4>
+                    <p class="text-xs text-gray-500 mb-6 leading-relaxed">Know another student who could benefit from academic clarity? Help us spread the word.</p>
+                    <a href="https://api.whatsapp.com/send?text=Hey!%20I%20just%20found%20this%20CBSE%20Board%20Exam%20Stress%20Buster%20Kit%20on%20EmmBee.One%20for%20Class%2010.%20It%20uses%20official%20guidelines%20to%20manage%20exams.%20Thought%20your%20child%20might%20benefit%20too!%20Check%20it%20here:%20https://www.emmbee.one"
+                       target="_blank"
+                       class="inline-flex items-center text-whatsapp border-2 border-whatsapp hover:bg-whatsapp hover:text-white font-bold px-4 py-4 rounded-full transition-all text-xs w-full justify-center shadow-sm">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.888-4.435 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                        Forward via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
                 class="bg-black/30 border border-white/10 rounded-2xl p-5 mb-8 text-sm md:text-base text-gray-200 font-light italic leading-relaxed shadow-inner">
                 "Hello there! I found this academic mentoring program for CBSE classes 8, 9 & 10. Their approach to
                 building students seems unique—perhaps you'd like to check it out: <span
@@ -1624,6 +1666,83 @@
                 modal.classList.add('opacity-0', 'invisible');
             }, 300);
         }
+
+        // EXIT INTENT LOGIC
+        let exitModalShown = sessionStorage.getItem('exitModalShown') || false;
+
+        function openExitModal() {
+            if (exitModalShown) return;
+            const modal = document.getElementById('exit-intent-modal');
+            const content = document.getElementById('exit-modal-content');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('opacity-100', 'visible');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            exitModalShown = true;
+            sessionStorage.setItem('exitModalShown', 'true');
+        }
+
+        function closeExitModal() {
+            const modal = document.getElementById('exit-intent-modal');
+            const content = document.getElementById('exit-modal-content');
+            content.classList.remove('scale-100', 'opacity-100');
+            modal.classList.remove('opacity-100', 'visible');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Desktop: Mouse Leave
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0) openExitModal();
+        });
+
+        // Mobile: Scroll Depth (75%)
+        window.addEventListener('scroll', () => {
+            const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+            if (scrollPercent > 0.75) openExitModal();
+        });
+
+        // Form Handling & Download
+        const exitForm = document.getElementById('exit-lead-form');
+        exitForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('exit-submit-btn');
+            btn.innerHTML = 'Sending...';
+            btn.disabled = true;
+
+            const formData = new FormData(exitForm);
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.status === 200) {
+                    btn.innerHTML = 'Success! Downloading...';
+                    btn.classList.replace('bg-persian', 'bg-accent');
+                    
+                    // Trigger Download
+                    const link = document.createElement('a');
+                    link.href = 'downloads/Magnet2-Stress buster kit.pdf';
+                    link.download = 'Stress_Buster_Kit_EmmBee.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    setTimeout(() => {
+                        closeExitModal();
+                    }, 2000);
+                } else {
+                    btn.innerHTML = 'Error. Try again.';
+                    btn.disabled = false;
+                }
+            })
+            .catch(error => {
+                btn.innerHTML = 'Error. Try again.';
+                btn.disabled = false;
+            });
+        });
     </script>
 </body>
 
