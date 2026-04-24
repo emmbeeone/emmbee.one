@@ -20,21 +20,23 @@ This file contains the persistent context and instruction memory for AI Agents (
    - Complex effects (glassmorphism, gradient shadows, fixed backgrounds) must be defined in `css/styles.css`.
    - Never use ad-hoc inline styles unless absolutely necessary.
 3. **Routing:**
-   - Standard anchor tags are used (`<a href="directory/">...</a>`).
-   - GitHub pages requires relative pathing for local dev to match production. Subpages are housed in their own directories containing an `index.html` file (e.g., `success-stories/index.html`).
-4. **Third-Party Integrations:**
-   - **Google Analytics:** `gtag` must be strictly present in the `<head>` of all `index.html` pages.
-   - **Calendly:** The booking widget script and CSS are globally linked.
+   - Standard anchor tags are used (`<a href="directory/">...</a>`). Subpages use their own directories with `index.html`.
+4. **Form Logic & Leads:**
+   - **Web3Forms:** Active lead capture (Key: `5b17f4f9-ab49-4755-9afa-2882fb0be379`).
+5. **Analytics:**
+   - **GA4:** `gtag` must be on all pages. Use descriptive labels (e.g., `'Lead Form FAQs'`).
 
 ## Previous Refactoring Notes
-- Converted a single tall index.html into a multi-page site.
-- Handled Apple-like minimalistic visual tweaks, fixing zoom bugs, and resolving 404 paths for static publishing.
-- Applied "Phoenix" watermarking graphics and specific QR code designs.
+- Converted to multi-page site; fixed Apple-like aesthetics and 404 paths.
+- **Lead Gen Site-Wide:** Deployed "Stress Buster Kit" exit-intent modal globally.
+- **Stabilization:** Cleaned structural corruption in `faqs/index.html`.
+- **Local SEO:** Standardized `LocalBusiness` JSON-LD schema for Dehradun keywords.
 
 ## Where We Left Off
-- Development paused by the USER. The website is in a stable, multi-page format. All UX/UI refinements and Contact Hub standardization have been completed.
-- To continue, monitor if adding new pages like "About" or additional blog posts requires CMS architecture, though currently static is preferred.
+- The site is live with an active lead funnel.
+- **Lead Asset Hierarchy:** **Gap Checker** (Primary Lead Magnet) vs. **Stress Buster Kit** (Value-Add Gift).
+- **Current Goal:** Monitor GA4 events (`stress_buster_view`, `stress_buster_download`) and verify the latest CBSE 2026 pattern alignment in lead assets.
 
 ## Agent Instructions:
-- Always read the `DEVELOPER_HANDBOOK.md` in the root folder alongside this.
-- If requested to add a new page, duplicate an existing sub-page directory (like `faqs/`), clear the content, and use the existing header/footer elements. Ensure paths to `../css/styles.css` and `../images/` remain valid.
+- Read `DEVELOPER_HANDBOOK.md` and this state file before any changes.
+- Form event capture MUST use GA4 names as documented in the handbook.

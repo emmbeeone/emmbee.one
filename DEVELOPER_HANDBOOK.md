@@ -45,7 +45,25 @@ emmbee.one/
 - Any new interactive scripts should ideally rely on vanilla JavaScript within or referenced by the HTML files.
 - Google Analytics is required on every page.
 
-## 6. Current Status & Next Steps
-- Development is currently paused. 
-- The site successfully transitioned to multiple pages. Common elements like navigation, footers, and the Contact Hub are standardized.
-- **Future Actions:** If resuming, check on adding dynamic/CMS content if limits of static HTML are reached, or continue expanding individual articles under `competency-based-education`.
+## 6. Lead Generation & Analytics
+- **Primary Lead Magnet:** [CBSE Foundation Gap Checker](https://www.emmbee.one/gap-checker/) — A high-intent diagnostic tool (interactive test) that captures student data and delivers reports.
+- **Value-Add (Gift):** [Stress Buster Kit](https://www.emmbee.one/downloads/Stress_Buster_Kit.pdf) — A low-friction PDF magnet triggered via site-wide **Exit Intent**.
+- **Exit Intent Logic:**
+  - Desktop: Triggers when mouse leaves the top of the viewport.
+  - Mobile: Triggers at 75% scroll depth.
+  - Persistence: Managed via `sessionStorage` (flag: `emmbee_kit_seen`) to show only once per session.
+- **Form Automation:** Uses **Web3Forms** (Production Key: `5b17f4f9-ab49-4755-9afa-2882fb0be379`).
+- **Event Tracking (GA4):**
+  - `stress_buster_view`: Modal displayed.
+  - `stress_buster_download`: Successful form submission.
+  - `whatsapp_share_viral`: Clicks on the viral sharing features in the modal.
+  - `gap_checker_click`: Clicks on the diagnostic tool.
+
+## 7. Current Status & Next Steps
+- **Project Status:** All site-wide lead magnets are deployed and stabilized.
+- **Stabilization:** The `faqs/index.html` structure was cleaned of duplicate blocks and is fully redundant-free.
+- **SEO Status:** Local Business JSON-LD schema is standardized across all sub-pages targeting the Dehradun region (Tuitions/Mentoring).
+- **Future Actions:** 
+  - Monitoring Google Analytics for conversion rates between the "Gap Checker" (High Intent) and "Stress Buster Kit" (Low Friction).
+  - Verifying the "Gap Checker" report generation logic for newly added CBSE 2026 pattern alignment.
+  - Standardizing the viral sharing message across all conversion points.
