@@ -62,6 +62,7 @@
         "latitude": 30.3072,
         "longitude": 78.0002
       },
+      "keywords": ["CBSE Tuitions Dehradun", "Home Tuition Dehradun", "CBSE Coaching Classes", "Class 10 Maths Science Tuition", "Academic Mentoring Dehradun"],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
@@ -191,11 +192,13 @@
             transition: all 0.3s ease-out;
             display: none;
         }
+
         #exit-intent-modal.active {
             display: flex;
             opacity: 1;
             visibility: visible;
         }
+
         .exit-modal-glass {
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 50px 100px -20px rgba(10, 25, 47, 0.4), 0 30px 60px -30px rgba(0, 0, 0, 0.5);
@@ -320,10 +323,12 @@
 
                 <!-- Highlighted Secondary CTA -->
                 <a href="gap-checker/"
+                    onclick="gtag('event', 'gap_checker_click', {'event_category': 'Magnet', 'event_label': 'Hero Pill'});"
                     class="bg-white/10 hover:bg-white/20 text-white hover:text-gold text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 px-8 py-3 rounded-full border border-white/20 hover:border-gold shadow-lg backdrop-blur-sm relative z-20 text-center inline-block">
                     <span class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         Check Foundation Gaps (Free Diagnostic)
                     </span>
@@ -370,7 +375,8 @@
                             Manoj Kumar
                         </h2>
                         <p class="text-gray-200 text-lg md:text-xl font-sans mb-8 leading-relaxed max-w-2xl opacity-90">
-                            "Design Thinker and global IT professional with 20 years of international experience. Driven
+                            "Educationalist, Teacher, Mentor, Design Thinker and global IT professional with 20 years of
+                            international experience. Driven
                             to build clarity, logic, and independent thinking through academic mentoring."
                         </p>
 
@@ -1484,59 +1490,84 @@
     </footer>
 
     <!-- ORIGINAL SHARE MODAL (Restored for Footer Button) -->
-    <div id="share-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300">
+    <div id="share-modal"
+        class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300">
         <div class="absolute inset-0 bg-persiandark/80 backdrop-blur-md" onclick="closeShareModal()"></div>
-        <div class="relative bg-white/10 backdrop-blur-2xl border border-white/20 p-8 md:p-10 rounded-[2rem] shadow-2xl w-full max-w-lg transform scale-95 opacity-0 transition-all duration-300" id="share-modal-content">
-            <button onclick="closeShareModal()" class="absolute top-4 right-4 text-gray-300 hover:text-white bg-black/20 rounded-full p-2">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <div class="relative bg-white/10 backdrop-blur-2xl border border-white/20 p-8 md:p-10 rounded-[2rem] shadow-2xl w-full max-w-lg transform scale-95 opacity-0 transition-all duration-300"
+            id="share-modal-content">
+            <button onclick="closeShareModal()"
+                class="absolute top-4 right-4 text-gray-300 hover:text-white bg-black/20 rounded-full p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
             </button>
             <h3 class="text-2xl font-serif font-bold text-white mb-3">Share EmmBee.One</h3>
-            <p class="text-gray-300 text-sm mb-6 font-light">forward this message to someone who needs academic clarity.</p>
-            <div class="bg-black/30 border border-white/10 rounded-2xl p-5 mb-8 text-sm text-gray-200 italic leading-relaxed">
-                "Hello there! I found this academic mentoring program for CBSE classes 8, 9 & 10. Their approach seems unique—check it out: https://www.emmbee.one"
+            <p class="text-gray-300 text-sm mb-6 font-light">forward this message to someone who needs academic clarity.
+            </p>
+            <div
+                class="bg-black/30 border border-white/10 rounded-2xl p-5 mb-8 text-sm text-gray-200 italic leading-relaxed">
+                "Hello there! I found this academic mentoring program for CBSE classes 8, 9 & 10. Their approach seems
+                unique—check it out: https://www.emmbee.one"
             </div>
             <a href="https://api.whatsapp.com/send?text=Hello%20there!%20I%20found%20this%20academic%20mentoring%20program%20for%20CBSE%20classes%208,%209%20%26%2010.%20Their%20approach%20to%20building%20students%20seems%20unique%E2%80%94perhaps%20you%27d%20like%20to%20check%20it%20out:%20https://www.emmbee.one"
-               target="_blank" onclick="closeShareModal()" class="bg-whatsapp hover:bg-whatsapphover text-white font-bold py-4 rounded-full w-full flex justify-center items-center shadow-lg transition transform hover:scale-105">
-               Confirm & Forward to WhatsApp
+                target="_blank" onclick="closeShareModal()"
+                class="bg-whatsapp hover:bg-whatsapphover text-white font-bold py-4 rounded-full w-full flex justify-center items-center shadow-lg transition transform hover:scale-105">
+                Confirm & Forward to WhatsApp
             </a>
         </div>
     </div>
 
     <!-- EXIT INTENT MODAL (STRESS BUSTER KIT) -->
-    <div id="exit-intent-modal" class="fixed inset-0 z-[200] flex items-start md:items-center justify-center p-4 md:p-10 transition-all duration-300 overflow-y-auto">
+    <div id="exit-intent-modal"
+        class="fixed inset-0 z-[200] flex items-start md:items-center justify-center p-4 md:p-10 transition-all duration-300 overflow-y-auto">
         <!-- Backdrop -->
         <div class="fixed inset-0 bg-persiandark/95 backdrop-blur-md cursor-pointer" onclick="closeExitModal()"></div>
 
         <!-- Modal Content -->
-        <div class="relative bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-2xl w-full max-w-2xl my-8 md:my-0 overflow-hidden transform scale-95 opacity-0 transition-all duration-300 z-10" id="exit-modal-content">
+        <div class="relative bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-2xl w-full max-w-2xl my-8 md:my-0 overflow-hidden transform scale-95 opacity-0 transition-all duration-300 z-10"
+            id="exit-modal-content">
             <!-- Close Button (Enlarged for Mobile) -->
-            <button onclick="closeExitModal()" class="absolute top-4 right-4 md:top-6 md:right-6 text-gray-400 hover:text-persiandark bg-gray-100/50 hover:bg-gray-200 rounded-full p-3 transition-all z-30" aria-label="Close">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <button onclick="closeExitModal()"
+                class="absolute top-4 right-4 md:top-6 md:right-6 text-gray-400 hover:text-persiandark bg-gray-100/50 hover:bg-gray-200 rounded-full p-3 transition-all z-30"
+                aria-label="Close">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
             </button>
 
             <div class="flex flex-col md:flex-row h-full">
                 <!-- Left Side: Offer -->
                 <div class="w-full md:w-7/12 p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-100">
-                    <span class="bg-gold/20 text-gold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block">Free Gift for Class 10</span>
-                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-persiandark mb-4">Board Exam Stress Buster Kit 2026</h3>
-                    <p class="text-gray-600 text-sm mb-6">CBSE-approved techniques to stay calm and perform better. Download yours now!</p>
+                    <span
+                        class="bg-gold/20 text-gold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block">Free
+                        Gift for Class 10</span>
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-persiandark mb-4">Board Exam Stress Buster
+                        Kit 2026</h3>
+                    <p class="text-gray-600 text-sm mb-6">CBSE-approved techniques to stay calm and perform better.
+                        Download yours now!</p>
 
                     <form id="exit-lead-form" class="space-y-4">
                         <input type="hidden" name="access_key" value="5b17f4f9-ab49-4755-9afa-2882fb0be379">
                         <input type="hidden" name="subject" value="New Stress Buster Kit Lead from Home Page">
                         <input type="hidden" name="from_name" value="EmmBee.One Gift">
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                        
+
                         <div>
-                            <input type="text" name="name" placeholder="Student/Parent Name" required class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition text-sm font-medium">
+                            <input type="text" name="name" placeholder="Student/Parent Name" required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition text-sm font-medium">
                         </div>
                         <div>
-                            <input type="email" name="email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition text-sm font-medium">
+                            <input type="email" name="email" placeholder="Email Address" required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition text-sm font-medium">
                         </div>
                         <div>
-                            <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition text-sm font-medium">
+                            <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition text-sm font-medium">
                         </div>
-                        <button type="submit" id="exit-submit-btn" class="w-full bg-persian hover:bg-persiandark text-white font-bold py-4 rounded-xl shadow-lg transition transform hover:-translate-y-1">
+                        <button type="submit" id="exit-submit-btn"
+                            class="w-full bg-persian hover:bg-persiandark text-white font-bold py-4 rounded-xl shadow-lg transition transform hover:-translate-y-1">
                             Download Now (PDF)
                         </button>
                         <p class="text-[10px] text-center text-gray-400 mt-2">Privacy focused. No spam, only value.</p>
@@ -1544,14 +1575,18 @@
                 </div>
 
                 <!-- Right Side: Viral Share (Verbatim Replica) -->
-                <div class="w-full md:w-5/12 bg-gray-50 p-8 md:p-10 flex flex-col justify-center items-center text-center">
+                <div
+                    class="w-full md:w-5/12 bg-gray-50 p-8 md:p-10 flex flex-col justify-center items-center text-center">
                     <h4 class="text-lg font-serif font-bold text-persian mb-3">Share with a Friend</h4>
-                    <p class="text-xs text-gray-500 mb-6 leading-relaxed">Know another student who could benefit from academic clarity? Help us spread the word.</p>
+                    <p class="text-xs text-gray-500 mb-6 leading-relaxed">Know another student who could benefit from
+                        academic clarity? Help us spread the word.</p>
                     <a href="https://api.whatsapp.com/send?text=Hey!%20I%20just%20found%20this%20CBSE%20Board%20Exam%20Stress%20Buster%20Kit%20on%20EmmBee.One%20for%20Class%2010.%20It%20uses%20official%20guidelines%20to%20manage%20exams.%20Thought%20your%20child%20might%20benefit%20too!%20Check%20it%20here:%20https://www.emmbee.one"
-                       target="_blank"
-                       class="inline-flex items-center text-whatsapp border-2 border-whatsapp hover:bg-whatsapp hover:text-white font-bold px-4 py-4 rounded-full transition-all text-xs w-full justify-center shadow-sm">
+                        target="_blank"
+                        onclick="gtag('event', 'whatsapp_share_viral', {'event_category': 'Sharing', 'event_label': 'Exit Modal'});"
+                        class="inline-flex items-center text-whatsapp border-2 border-whatsapp hover:bg-whatsapp hover:text-white font-bold px-4 py-4 rounded-full transition-all text-xs w-full justify-center shadow-sm">
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.888-4.435 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.888-4.435 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                         </svg>
                         Forward via WhatsApp
                     </a>
@@ -1669,7 +1704,7 @@
 
         // EXIT INTENT LOGIC
         const isTestMode = window.location.search.includes('test=1');
-        let exitModalShown = sessionStorage.getItem('exitModalV3Shown') || false;
+        let exitModalShown = sessionStorage.getItem('emmbee_kit_seen') || false;
 
         function openExitModal() {
             if (exitModalShown && !isTestMode) return;
@@ -1679,9 +1714,10 @@
             setTimeout(() => {
                 modal.classList.add('opacity-100', 'visible', 'active');
                 content.classList.add('scale-100', 'opacity-100');
+                gtag('event', 'stress_buster_view', { 'event_category': 'Magnet', 'event_label': 'Exit Intent' });
             }, 10);
             exitModalShown = true;
-            sessionStorage.setItem('exitModalV3Shown', 'true');
+            sessionStorage.setItem('emmbee_kit_seen', 'true');
         }
 
         function closeExitModal() {
@@ -1707,7 +1743,7 @@
 
         // Form Handling & Download
         const exitForm = document.getElementById('exit-lead-form');
-        exitForm.addEventListener('submit', function(e) {
+        exitForm.addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = document.getElementById('exit-submit-btn');
             btn.innerHTML = 'Sending...';
@@ -1718,31 +1754,33 @@
                 method: 'POST',
                 body: formData
             })
-            .then(response => {
-                if (response.status === 200) {
-                    btn.innerHTML = 'Success! Downloading...';
-                    btn.classList.replace('bg-persian', 'bg-accent');
-                    
-                    // Trigger Download
-                    const link = document.createElement('a');
-                    link.href = 'downloads/Stress_Buster_Kit.pdf';
-                    link.download = 'Stress_Buster_Kit_EmmBee.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    
-                    setTimeout(() => {
-                        closeExitModal();
-                    }, 2000);
-                } else {
+                .then(response => {
+                    if (response.status === 200) {
+                        btn.innerHTML = 'Success! Downloading...';
+                        btn.classList.replace('bg-persian', 'bg-accent');
+
+                        gtag('event', 'stress_buster_download', { 'event_category': 'Magnet', 'event_label': 'Lead Form' });
+
+                        // Trigger Download
+                        const link = document.createElement('a');
+                        link.href = '/downloads/Stress_Buster_Kit.pdf';
+                        link.download = 'Stress_Buster_Kit_EmmBee.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+
+                        setTimeout(() => {
+                            closeExitModal();
+                        }, 2000);
+                    } else {
+                        btn.innerHTML = 'Error. Try again.';
+                        btn.disabled = false;
+                    }
+                })
+                .catch(error => {
                     btn.innerHTML = 'Error. Try again.';
                     btn.disabled = false;
-                }
-            })
-            .catch(error => {
-                btn.innerHTML = 'Error. Try again.';
-                btn.disabled = false;
-            });
+                });
         });
     </script>
 </body>
