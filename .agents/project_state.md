@@ -27,16 +27,17 @@ This file contains the persistent context and instruction memory for AI Agents (
    - **GA4:** `gtag` must be on all pages. Use descriptive labels (e.g., `'Lead Form FAQs'`).
 
 ## Previous Refactoring Notes
-- Converted to multi-page site; fixed Apple-like aesthetics and 404 paths.
-- **Lead Gen Site-Wide:** Deployed "Stress Buster Kit" exit-intent modal globally.
-- **Stabilization:** Cleaned structural corruption in `faqs/index.html`.
-- **Local SEO:** Standardized `LocalBusiness` JSON-LD schema for Dehradun keywords.
+- **Lead Generation Deployment:** Standardized the "Stress Buster Kit" site-wide via exit-intent.
+- **Conversion Tracking:** Live for `stress_buster_view`, `stress_buster_download`, `whatsapp_share_viral`, and `gap_checker_click`.
+- **Stabilization:** Cleared deep structural duplicates in `faqs/index.html`.
+- **Local SEO:** Deployed standardized JSON-LD schema for Dehradun tutoring/mentoring keywords.
 
-## Where We Left Off
-- The site is live with an active lead funnel.
-- **Lead Asset Hierarchy:** **Gap Checker** (Primary Lead Magnet) vs. **Stress Buster Kit** (Value-Add Gift).
-- **Current Goal:** Monitor GA4 events (`stress_buster_view`, `stress_buster_download`) and verify the latest CBSE 2026 pattern alignment in lead assets.
+## Handover State
+- **Lead Magnet Hierarchy:** **Gap Checker** is the High-Value Primary Magnet. **Stress Buster Kit** is the Low-Friction Entry Point.
+- **Critical Keys:** Web3Forms API Key is embedded and should not be modified.
+- **Testing Mode:** Append `?test=1` to ignore session storage flags for modal testing.
 
 ## Agent Instructions:
-- Read `DEVELOPER_HANDBOOK.md` and this state file before any changes.
-- Form event capture MUST use GA4 names as documented in the handbook.
+- **Resumption:** Read `DEVELOPER_HANDBOOK.md` sections 8-11 immediately upon start.
+- **Standardization:** Maintain the "Apple-style" aesthetics and relative pathing for all new sub-pages.
+- **Analytics:** Ensure every new lead capture point includes a descriptive `event_label` for the source page.

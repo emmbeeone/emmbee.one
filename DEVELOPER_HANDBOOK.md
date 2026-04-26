@@ -59,11 +59,21 @@ emmbee.one/
   - `whatsapp_share_viral`: Clicks on the viral sharing features in the modal.
   - `gap_checker_click`: Clicks on the diagnostic tool.
 
-## 7. Current Status & Next Steps
-- **Project Status:** All site-wide lead magnets are deployed and stabilized.
-- **Stabilization:** The `faqs/index.html` structure was cleaned of duplicate blocks and is fully redundant-free.
-- **SEO Status:** Local Business JSON-LD schema is standardized across all sub-pages targeting the Dehradun region (Tuitions/Mentoring).
-- **Future Actions:** 
-  - Monitoring Google Analytics for conversion rates between the "Gap Checker" (High Intent) and "Stress Buster Kit" (Low Friction).
-  - Verifying the "Gap Checker" report generation logic for newly added CBSE 2026 pattern alignment.
-  - Standardizing the viral sharing message across all conversion points.
+## 8. Maintenance & Testing
+- **Bypassing Persistence:** To test the exit-intent modal without clearing `sessionStorage`, append `?test=1` to any URL. This ignores the `emmbee_kit_seen` flag.
+- **Form Verification:** Forms are linked to Web3Forms. Test submissions will consume credits on the production key (`5b17f4f9-ab49-4755-9afa-2882fb0be379`). Use the browser console to verify 200 OK responses from `https://api.web3forms.com/submit`.
+- **Structural Integrity:** If editing sub-pages, ensure the `</body>` tag is preceded by the singular modal and script blocks. Avoid duplicating the "Stress Buster Kit" code; refer to `faqs/index.html` for the "Definitive Implementation" structure.
+
+## 9. Localhost vs. Production
+- **Pathing:** All assets (CSS, Images) must use **relative paths** (e.g., `../css/styles.css`). Absolute paths (e.g., `/css/styles.css`) will break on GitHub Pages due to the sub-directory hosting structure.
+- **CNAME:** The site uses a custom domain `www.emmbee.one`. Ensure the `CNAME` file in the root is never deleted.
+
+## 10. Asset Workflow
+- **Images:** All new images should be processed via `compress.py` to convert to WebP at 80% quality. 
+- **SEO Schema:** Each `index.html` contains `LocalBusiness` and `BreadcrumbList` (where applicable) schema. Standardize any new page by copying the `<script type="application/ld+json">` block from `index.html`.
+
+## 11. Handover Checklist
+- [ ] Verify `gtag` is receiving events from the new sub-page.
+- [ ] Check mobile responsiveness of the exit intent modal (75% scroll).
+- [ ] Ensure all internal links use the trailing slash (e.g., `href="mentor/"`) for GitHub Pages compatibility.
+- [ ] Validate that the Lead Form is sending data to the unified `Web3Forms` key.
